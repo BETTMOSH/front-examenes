@@ -1,0 +1,17 @@
+button, button:hover {
+    width: 100%;
+    background-color: transparent;
+    color: #3c8bf3;
+    border: 1px solid #3c8bf3;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+mat-card {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #e9f2f5;
+}
