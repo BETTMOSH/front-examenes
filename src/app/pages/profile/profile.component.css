@@ -2,18 +2,51 @@
   max-width: 150px;
   max-height: 150px;
   border: 2px solid gainsboro;
-  border-radius: 50%;
+  border-radius: 40%;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 10px;
+  
 }
 
 .table{
-  background-color: rgb(228, 233, 230);
+  background-color: #e9f2f5;
   width: 100%;
-  border-collapse: collapse;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+
 }
 
 .table tr td{
-  padding: 15px 10px;
-  border: 0.5px solid rgb(153, 150, 150);
+  font-weight: 450;
+  padding: 15px 15px;
+  border: 0.5px solid rgb(187, 183, 183);
+  text-align: center;
+}
+
+.table tr td:first-child{
+  font-weight: bold;
+  width: 49.5%;
 }
 
 
+.text-center{
+  justify-content: center;
+  text-align: center;
+  padding: auto;
+}
+
+/* Ocultar elementos que no queremos imprimir */
+@media print {
+  app-sidebar,
+  col-md-3,
+  button
+
+  {
+    display: none !important;
+  }
+
+}
+
+button{
+  margin: 10px;
+}

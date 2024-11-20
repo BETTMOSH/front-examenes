@@ -1,4 +1,4 @@
-import { PreguntaService } from './../../../services/pregunta.service';
+import { PreguntaService } from './../../../services/preguntaservice/pregunta.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
@@ -37,7 +37,7 @@ export class ActualizarPreguntaComponent implements OnInit {
     this.preguntaService.actualizarPregunta(this.pregunta).subscribe({
       next:(data) => {
         Swal.fire('Pregunta actualizada','La pregunta ha sido actualizada con éxito','success').then((e) => {
-          this.router.navigate(['/admin/ver-preguntas/'+this.pregunta.examen.examenId+'/'+this.pregunta.examen.titulo]);
+          this.router.navigate(['/admin/ver-preguntas/' + this.pregunta.examen.examenId+'/' + this.pregunta.examen.titulo]);
         })
       }
   })

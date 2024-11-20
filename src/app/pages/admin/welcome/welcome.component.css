@@ -1,26 +1,69 @@
-.container {
-    margin-top: 20px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    background-color: #e9f2f5;
+.card-container {
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f4f8fb;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.308);
-
-    width: 100%;
-    color: #2e7ecf;
-    font-size: 1.5rem;
-    text-align: start;
-
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
 }
 
-mat-card {
-    
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.308);
-    background-color: #a1b5c2;
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.header-text {
+    text-align: center;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2e7ecf;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #4a90e2;
+}
+
+.content-container {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.section-title {
+    margin-left: 20px;
+    font-size: 1.4rem;
+    color: #2e7ecf;
+    font-weight: bold;
+}
+
+.admin-functions {
+    list-style: none;
+    padding-left: 20px;
+    margin-left: 18px;
+}
+
+.admin-functions li {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #2e7ecf;
+    margin: 10px 0;
+}
+
+.icon {
+    margin-right: 10px;
+    color: #3c8bf3;
+    font-size: 1.5rem;
 }

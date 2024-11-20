@@ -1,6 +1,6 @@
 import  Swal  from 'sweetalert2';
-import { CategoriaService } from './../../../services/categoria.service';
-import { ExamenService } from 'src/app/services/examen.service';
+import { CategoriaService } from './../../../services/categoriaservice/categoria.service';
+import { ExamenService } from 'src/app/services/examenservice/examen.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -33,29 +33,29 @@ export class ActualizarExamenComponent implements OnInit {
       }
     })
 
-    this.categoriaService.listarCategorias().subscribe(
-      (data:any) => {
+    this.categoriaService.listarCategorias().subscribe({
+      next:(data:any) => {
         this.categorias = data;
       },
-      (error) => {
+      error:(error) => {
         alert('Error al cargar las categorías');
       }
-    )
+    })
   }
 
   public actualizarDatos(){
-    this.examenService.actualizarExamen(this.examen).subscribe(
-      (data) => {
+    this.examenService.actualizarExamen(this.examen).subscribe({
+      next:(data:any) => {
         Swal.fire('Examen actualizado','El examen ha sido actualizado con éxito','success').then(
           (e) => {
             this.router.navigate(['/admin/examenes']);
           }
         );
       },
-      (error) => {
+      error:(error) => {
         Swal.fire('Error en el sistema','No se ha podido actualizar el examen','error');
         console.log(error);
       }
-    )
+    })
   }
 }

@@ -1,4 +1,4 @@
-<div class="bootstrap-wrapper">
+<!-- <div class="bootstrap-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -39,6 +39,54 @@
             Comenzar prueba
           </button>
         </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="exam-instructions-wrapper">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <mat-card class="mt-3">
+          <mat-card-header>
+            <mat-card-title class="text-center font-weight-bold">
+              Lea las instrucciones de esta página cuidadosamente
+            </mat-card-title>
+            <mat-card-subtitle class="text-center text-muted">Un paso más para ir</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content class="px-4 py-3">
+            <h2 class="font-weight-bold text-primary">{{ examen.titulo }}</h2>
+            <p>{{ examen.descripcion }}</p>
+            <mat-divider class="my-4"></mat-divider>
+
+            <h3 class="text-secondary">Instrucciones importantes</h3>
+            <mat-list dense>
+              <mat-list-item>Este exámen se ha desarrollado en base al contenido del temario durante el curso.</mat-list-item>
+              <mat-list-item>Tienes que enviar el cuestionario en <b>{{ examen.numeroDePreguntas * 2 }} minutos</b></mat-list-item>
+              <mat-list-item>Puede intentar el cuestionario cualquier cantidad de veces</mat-list-item>
+              <mat-list-item>Hay <b>{{ examen.puntosMaximos / examen.numeroDePreguntas }} puntos por pregunta</b></mat-list-item>
+            </mat-list>
+            <mat-divider class="my-4"></mat-divider>
+
+            <h3 class="text-secondary">Intentos de la prueba</h3>
+            <mat-list dense>
+              <mat-list-item>Presione el botón <b>Empezar</b> para iniciar el examen</mat-list-item>
+              <mat-list-item>El tiempo comenzará en el momento en que haga click en el botón de inicio</mat-list-item>
+              <mat-list-item>No puede reanudar este cuestionario si se interrumpe por algún motivo</mat-list-item>
+              <mat-list-item>Desplácese hacia abajo para pasar a la siguiente pregunta</mat-list-item>
+              <mat-list-item>Haga clic en el botón enviar cuestionario al finalizar el cuestionario</mat-list-item>
+              <mat-list-item>El informe de la prueba se genera automáticamente en forma de copia PDF</mat-list-item>
+            </mat-list>
+          </mat-card-content>
+
+          <mat-card-actions class="flex justify-content-center">
+            <button (click)="empezarExamen()" mat-raised-button color="primary">
+              Comenzar prueba
+            </button>
+          </mat-card-actions>
         </mat-card>
       </div>
     </div>

@@ -1,0 +1,703 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>gestion-examen-frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">gestion-examen-frontend documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ProfileComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/profile/profile.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-profile</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./profile.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./profile.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#user" >user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#imprimirPagina" >imprimirPagina</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(loginService: <a href="../injectables/LoginService.html" target="_self">LoginService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/pages/profile/profile.component.ts:11</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>loginService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoginService.html" target="_self" >LoginService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="imprimirPagina"></a>
+                    <span class="name">
+                        <span ><b>imprimirPagina</b></span>
+                        <a href="#imprimirPagina"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>imprimirPagina()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="26"
+                                    class="link-to-prism">src/app/pages/profile/profile.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">src/app/pages/profile/profile.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/pages/profile/profile.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { LoginService } from &#x27;./../../services/login.service&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-profile&#x27;,
+  templateUrl: &#x27;./profile.component.html&#x27;,
+  styleUrls: [&#x27;./profile.component.css&#x27;]
+})
+export class ProfileComponent implements OnInit {
+
+  user:any &#x3D; null;
+
+  constructor(private loginService:LoginService) { }
+
+  ngOnInit(): void {
+    this.user &#x3D; this.loginService.getUser();
+    /*this.loginService.getCurrentUser().subscribe(
+      (user:any) &#x3D;&gt; {
+        this.user &#x3D; user;
+      },
+      (error) &#x3D;&gt; {
+        alert(&quot;error&quot;);
+      }
+    )*/
+  }
+  imprimirPagina() {
+    const contenido &#x3D; document.getElementById(&#x27;profile-card&#x27;)?.innerHTML;
+    if (contenido) {
+      const ventanaImpresion &#x3D; window.open(&#x27;&#x27;, &#x27;IMPRIMIR&#x27;,);
+
+      // Escribe el contenido del perfil en esa ventana
+      ventanaImpresion?.document.write(&#x27;&lt;html&gt;&lt;head&gt;&lt;title&gt;Lenguage Active&lt;/title&gt;&#x27;);
+      ventanaImpresion?.document.write(&#x27;&lt;style&gt;&#x27;);
+      ventanaImpresion?.document.write(&#x60;
+        @media print {
+        button,
+          .no-print { display: none; }
+        }
+        &lt;img class &#x3D; &quot;profile-image&quot;
+            src &#x3D; &quot;assets/imagenes/gabriel.jpg&quot; alt&#x3D;&quot;foto-perfil&quot;&gt; { max-width: 100%; height: auto; } /* Asegurar que la imagen se muestre bien en la impresión */
+      &#x60;);
+      ventanaImpresion?.document.write(&#x27;&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&#x27;);
+      ventanaImpresion?.document.write(contenido);
+      ventanaImpresion?.document.write(&#x27;&lt;/body&gt;&lt;/html&gt;&#x27;);
+
+      // Espera a que todo el contenido se cargue antes de ejecutar print
+      ventanaImpresion?.document.close();
+      ventanaImpresion?.focus();
+
+      // Imprime el contenido y cierra la ventana temporal
+      ventanaImpresion?.print();
+      ventanaImpresion?.close();
+    }
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-card class&#x3D;&quot;profile-page&quot; id&#x3D;&quot;profile-card&quot; style&#x3D;&quot;margin-left: 10px;&quot;&gt;
+  &lt;h1&gt;Detalles del perfil&lt;/h1&gt;
+  &lt;mat-card-content&gt;
+    &lt;div class &#x3D; &quot;bootstrap-wrapper &quot;&gt;
+      &lt;div class &#x3D; &quot;container &quot;&gt;
+        &lt;div class &#x3D; &quot;text-center&quot;&gt;
+          &lt;!-- https://www.w3schools.com/howto/img_avatar.png --&gt;
+          &lt;img class &#x3D; &quot;profile-image&quot;
+            src &#x3D; &quot;assets/imagenes/gabriel.jpg&quot; alt&#x3D;&quot;foto-perfil&quot;&gt;
+
+          &lt;h1 class&#x3D;&quot;mt20&quot;&gt;{{ user.nombre }} {{ user.apellido }}&lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;div class &#x3D; &quot;row&quot;&gt;
+          &lt;div class &#x3D; &quot;col-md-10 offset-md-1&quot;&gt;
+            &lt;table class &#x3D; &quot;table text-center&quot;&gt;
+              &lt;tr&gt;
+                &lt;td&gt;Nombre de usuario:&lt;/td&gt;
+                &lt;td&gt;{{ user.username }}&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;ID:&lt;/td&gt;
+                &lt;td&gt;{{ user.id }}&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;Nombre:&lt;/td&gt;
+                &lt;td&gt;{{ user.nombre }}&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;Apellido:&lt;/td&gt;
+                &lt;td&gt;{{ user.apellido }}&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;Fecha de nacimiento:&lt;/td&gt;
+                &lt;td&gt;{{ user.fechaNacimiento }}&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;Email:&lt;/td&gt;
+                &lt;td&gt;{{ user.email }}&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;Teléfono:&lt;/td&gt;
+                &lt;td&gt;{{ user.telefono }}&lt;/td&gt;
+              &lt;/tr&gt;
+              
+              &lt;tr&gt;
+                &lt;td&gt;Rol:&lt;/td&gt;
+                &lt;td&gt;{{ user.authorities[0].authority }}&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;Estado:&lt;/td&gt;
+                &lt;td&gt;{{ user.enabled ? &quot;Activo&quot; : &quot;No activo&quot;}}&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;mat-card-actions class &#x3D; &quot;text-center col-md-10 offset-md-1 mt10 &quot;&gt;
+      &lt;button (click) &#x3D; &quot;imprimirPagina()&quot; mat-raised-button color&#x3D;&quot;primary&quot;&gt;Imprimir&lt;/button&gt;
+      &lt;button mat-raised-button color &#x3D; &quot;accent&quot;&gt;Compartir&lt;/button&gt;
+    &lt;/mat-card-actions&gt;
+  &lt;/mat-card-content&gt;
+&lt;/mat-card&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./profile.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.profile-image{
+  max-width: 150px;
+  max-height: 150px;
+  border: 2px solid gainsboro;
+  border-radius: 40%;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 10px;
+  
+}
+
+.table{
+  background-color: #e9f2f5;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+
+}
+
+.table tr td{
+  font-weight: 450;
+  padding: 15px 15px;
+  border: 0.5px solid rgb(187, 183, 183);
+  text-align: center;
+}
+
+.table tr td:first-child{
+  font-weight: bold;
+  width: 49.5%;
+}
+
+
+.text-center{
+  justify-content: center;
+  text-align: center;
+  padding: auto;
+}
+
+/* Ocultar elementos que no queremos imprimir */
+@media print {
+  app-sidebar,
+  col-md-3,
+  button
+
+  {
+    display: none !important;
+  }
+
+}
+
+button{
+  margin: 10px;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-card class="profile-page" id="profile-card" style="margin-left: 10px;">  <h1>Detalles del perfil</h1>  <mat-card-content>    <div class = "bootstrap-wrapper ">      <div class = "container ">        <div class = "text-center">          <!-- https://www.w3schools.com/howto/img_avatar.png -->          <img class = "profile-image"            src = "assets/imagenes/gabriel.jpg" alt="foto-perfil">          <h1 class="mt20">{{ user.nombre }} {{ user.apellido }}</h1>        </div>        <div class = "row">          <div class = "col-md-10 offset-md-1">            <table class = "table text-center">              <tr>                <td>Nombre de usuario:</td>                <td>{{ user.username }}</td>              </tr>              <tr>                <td>ID:</td>                <td>{{ user.id }}</td>              </tr>              <tr>                <td>Nombre:</td>                <td>{{ user.nombre }}</td>              </tr>              <tr>                <td>Apellido:</td>                <td>{{ user.apellido }}</td>              </tr>              <tr>                <td>Fecha de nacimiento:</td>                <td>{{ user.fechaNacimiento }}</td>              </tr>              <tr>                <td>Email:</td>                <td>{{ user.email }}</td>              </tr>              <tr>                <td>Teléfono:</td>                <td>{{ user.telefono }}</td>              </tr>                            <tr>                <td>Rol:</td>                <td>{{ user.authorities[0].authority }}</td>              </tr>              <tr>                <td>Estado:</td>                <td>{{ user.enabled ? "Activo" : "No activo"}}</td>              </tr>            </table>          </div>        </div>      </div>    </div>    <mat-card-actions class = "text-center col-md-10 offset-md-1 mt10 ">      <button (click) = "imprimirPagina()" mat-raised-button color="primary">Imprimir</button>      <button mat-raised-button color = "accent">Compartir</button>    </mat-card-actions>  </mat-card-content></mat-card></div>'
+    var COMPONENTS = [{'name': 'ActualizarExamenComponent', 'selector': 'app-actualizar-examen'},{'name': 'ActualizarPreguntaComponent', 'selector': 'app-actualizar-pregunta'},{'name': 'AddCategoriaComponent', 'selector': 'app-add-categoria'},{'name': 'AddExamenComponent', 'selector': 'app-add-examen'},{'name': 'AddPreguntaComponent', 'selector': 'app-add-pregunta'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InstruccionesComponent', 'selector': 'app-instrucciones'},{'name': 'LoadExamenComponent', 'selector': 'app-load-examen'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar-user'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'StartComponent', 'selector': 'app-start'},{'name': 'UserDashboardComponent', 'selector': 'app-user-dashboard'},{'name': 'ViewCategoriasComponent', 'selector': 'app-view-categorias'},{'name': 'ViewExamenesComponent', 'selector': 'app-view-examenes'},{'name': 'ViewExamenPreguntasComponent', 'selector': 'app-view-examen-preguntas'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ProfileComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProfileComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

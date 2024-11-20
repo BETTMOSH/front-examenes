@@ -1,4 +1,7 @@
-import { LoginService } from './../../../services/login.service';
+import { TYPE } from 'src/app/values.constants';
+import { LoginService } from './../../../services/loginservice/login.service';
+
+import Swal from 'sweetalert2';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -16,7 +19,27 @@ export class SidebarComponent implements OnInit {
 
   public logout(){
     this.login.logout();
-    window.location.reload();
+    
+  }
+  // aviso de despedida
+  toast(typeIcon = TYPE.SUCCESS, timerProgressBar: boolean = false) {
+    Swal.fire({
+      toast: true,
+      position: 'bottom',
+      showConfirmButton: false,
+      icon: typeIcon,
+      timerProgressBar,
+      timer: 5000,
+      title: 'Hasta pronto!!!'
+    })
+  }
+
+  logoutYtoast() {
+    this.logout();
+    this.toast();
+    setTimeout(() => {
+      window.location.reload();
+    },2000);
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from 'src/app/services/login.service';
+import { LoginService } from 'src/app/services/loginservice/login.service';
 
 @Component({
   selector: 'app-welcome',
@@ -13,14 +13,14 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.loginService.getUser();
-    /*this.loginService.getCurrentUser().subscribe(
+    this.loginService.getCurrentUser().subscribe(
       (user:any) => {
         this.user = user;
       },
       (error) => {
         alert("error");
       }
-    )*/
+    )
   }
 
 }

@@ -1,0 +1,807 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>gestion-examen-frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">gestion-examen-frontend documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  HomeComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/home/home.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-home</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./home.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./home.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loginService" >loginService</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(loginService: <a href="../injectables/LoginService.html" target="_self">LoginService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/pages/home/home.component.ts:9</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>loginService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoginService.html" target="_self" >LoginService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="13"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>loginService</b></span>
+                        <a href="#loginService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/LoginService.html" target="_self" >LoginService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/pages/home/home.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { LoginService } from &#x27;src/app/services/login.service&#x27;;
+
+@Component({
+  selector: &#x27;app-home&#x27;,
+  templateUrl: &#x27;./home.component.html&#x27;,
+  styleUrls: [&#x27;./home.component.css&#x27;]
+})
+export class HomeComponent implements OnInit {
+  
+  constructor(public loginService: LoginService) { }
+  
+  ngOnInit(): void {
+    
+  }
+  
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- &lt;div class&#x3D;&quot;bootstrap-wrapper&quot;&gt;
+  &lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;div class&#x3D;&quot;row mt20&quot;&gt;
+      &lt;div class &#x3D; &quot;col-md-6 offset-md-3 text-center&quot;&gt;
+        &lt;h1&gt;Bienvenido al portal de examenes&lt;/h1&gt;
+        &lt;button mat-raised-button color &#x3D; &quot;primary&quot; [routerLink]&#x3D;&quot;profileRoute&quot;&gt;Inicio&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+ --&gt;
+  &lt;body class&#x3D;&quot;fondopantalla&quot;&gt;
+&lt;header&gt;
+  &lt;div class&#x3D;&quot;page-heading&quot;&gt;
+    &lt;div class&#x3D;&quot;contain&quot;&gt;
+        &lt;div class&#x3D;&quot;heading-text&quot;&gt;
+            &lt;h1 class&#x3D;&quot;entry-title&quot;&gt;Hola&lt;/h1&gt;
+            &lt;h2&gt;Bienvenido a nuestro sitio web&lt;/h2&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/header&gt;
+ &lt;main&gt;
+  &lt;div class&#x3D;&quot;row caja text-center&quot;&gt;
+      &lt;div class&#x3D;&quot;image-group&quot; &gt;
+          &lt;img src&#x3D;&quot;assets/imagenes/hola.webp&quot; alt&#x3D;&quot;imagen&quot; class&#x3D;&quot;img-fluid custom-image&quot;&gt;
+          &lt;img src&#x3D;&quot;assets/imagenes/languages.jpg&quot; alt&#x3D;&quot;imagen&quot; class&#x3D;&quot;img-fluid custom-image&quot;&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;br&gt;
+
+  &lt;section&gt;
+&lt;div class&#x3D;&quot;container&quot; id&#x3D;&quot;page&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+  &lt;p class&#x3D;&quot;somos -bold&quot;&gt;Somos la escuela de idiomas Active Language&lt;/p&gt;
+  &lt;!-- se ha usado bootstrap y css para modificar las imagenes --&gt;
+  &lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+      &lt;div class&#x3D;&quot;image-container1&quot;&gt;
+          &lt;div class&#x3D;&quot;image-group2&quot;&gt;
+              &lt;a href&#x3D;&quot;https://es.wikipedia.org/wiki/Idioma_espa%C3%B1ol&quot;&gt;
+                  &lt;img src&#x3D;&quot;assets/imagenes/hello.jpg&quot; alt&#x3D;&quot;Español&quot;
+                       data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; width&#x3D;&quot;600&quot;
+                       title&#x3D;&quot;Aprende Español en tiempo record, gracias a nuestros cursos intensivos.&quot;/&gt;
+                      &lt;/a&gt;
+              &lt;a href&#x3D;&quot;https://es.wikipedia.org/wiki/Idioma_franc%C3%A9s&quot;&gt;
+                  &lt;!-- usamos img-derecha --&gt;
+                  &lt;img src&#x3D;&quot;assets/imagenes/escuela-idiomas.jpg&quot; alt&#x3D;&quot;Frances&quot;
+                       data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; width&#x3D;&quot;600&quot;
+                       title&#x3D;&quot;Aprende Frances en tiempo record, gracias a nuestros cursos intensivos.&quot;/&gt;
+              &lt;/a&gt;
+          &lt;/div&gt;
+          &lt;br&gt;
+
+          &lt;p class&#x3D;&quot;parrafo&quot;&gt;En Active Language, estamos comprometidos con tu viaje hacia el dominio de los idiomas. Nuestra escuela te brinda la oportunidad de explorar y sumergirte en una amplia variedad de lenguas, culturas y experiencias que enriquecerán tu vida de maneras inimaginables. Desde aprender los fundamentos de un nuevo idioma hasta perfeccionar tus habilidades lingüisticas, nuestros dedicados instructores te guiarán en cada paso del camino. Nuestros cursos dinámicos y personalizados te permiten alcanzar tus objetivos de comunicación en un entorno estimulante y acogedor.
+          &lt;/p&gt;
+          &lt;p class&#x3D;&quot;parrafo&quot;&gt;Desde aprender los fundamentos de un nuevo idioma hasta perfeccionar tus habilidades lingüisticas, nuestros dedicados instructores te guiarán en cada paso del camino. Nuestros cursos dinámicos y personalizados te permiten alcanzar tus objetivos de comunicación en un entorno estimulante y acogedor.
+          &lt;/p&gt;
+          &lt;p class&#x3D;&quot;parrafo&quot;&gt;Descubre nuevas perspectivas, amplía tus horizontes y enriquece tu vida con Active Language.
+          &lt;/p&gt;
+
+
+          &lt;div class&#x3D;&quot;image-group2&quot;&gt;
+              &lt;a href&#x3D;&quot;https://es.wikipedia.org/wiki/Idioma_alem%C3%A1n&quot;&gt;
+                  &lt;img src&#x3D;&quot;assets/imagenes/imagenescuela.jpg&quot; alt&#x3D;&quot;Aleman&quot;
+                       data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; width&#x3D;&quot;600&quot;
+                       title&#x3D;&quot;Aprende Aleman en tiempo record, gracias a nuestros cursos intensivos.&quot;/&gt;
+              &lt;/a&gt;
+              &lt;a href&#x3D;&quot;https://es.wikipedia.org/wiki/Idioma_ingl%C3%A9s&quot;&gt;
+                  &lt;!-- usamos img-derecha para mover las imagenes a la derecha --&gt;
+                  &lt;img src&#x3D;&quot;assets/imagenes/clase-frances.jpg&quot; alt&#x3D;&quot;Ingles&quot;
+                       data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; width&#x3D;&quot;600&quot; 
+                       title&#x3D;&quot;Aprende Ingles en tiempo record, gracias a nuestros cursos intensivos.&quot;/&gt;
+              &lt;/a&gt;
+          &lt;/div&gt;
+
+      &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;br&gt;
+&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/section&gt;
+&lt;br&gt;
+  &lt;!-- dividir con una linea esta seccion --&gt;
+  &lt;hr&gt;
+  &lt;br&gt;
+
+  &lt;section class&#x3D;&quot;sec1&quot;&gt;
+      &lt;div class&#x3D;&quot;text-center&quot;&gt;
+          &lt;!-- Columna con fotos --&gt;
+          &lt;div&gt;
+              &lt;img src&#x3D;&quot;assets/imagenes/titulacion.jpg&quot; alt&#x3D;&quot;imagennes&quot; class&#x3D;&quot;img-fluid rounded-4&quot;&gt;
+              &lt;br&gt;
+              &lt;br&gt;
+              &lt;div class&#x3D;&quot;video-container d-flex justify-content-center align-items-center&quot;&gt;
+                  &lt;iframe class&#x3D;&quot;rounded-4&quot; width&#x3D;&quot;580&quot; height&#x3D;&quot;335&quot; src&#x3D;&quot;https://www.youtube.com/embed/GpycTUEd0J4?si&#x3D;naH6e1oNowgQsJY-&quot; title&#x3D;&quot;YouTube video player&quot; frameborder&#x3D;&quot;0&quot;
+                          allow&#x3D;&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;
+              &lt;/div&gt;
+              &lt;br&gt;
+              &lt;img src&#x3D;&quot;assets/imagenes/PalacioCibeles.jpg&quot; alt&#x3D;&quot;Te esperamos en Madrid&quot; class&#x3D;&quot;img-fluid rounded-4&quot;
+                   data-bs-toggle&#x3D;&quot;modal&quot;
+                   data-bs-target&#x3D;&quot;#imagenModal&quot;
+                   data-imagen&#x3D;&quot;assets/imagenes/PalacioCibeles.jpg&quot;&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/section&gt;
+  &lt;br&gt;
+  &lt;br&gt;
+  &lt;div class&#x3D;&quot;mapa&quot; &gt;
+      &lt;!-- Google Maps iframe --&gt;
+      &lt;div class&#x3D;&quot;text-center&quot;&gt;
+          &lt;iframe src&#x3D;&quot;https://www.google.com/maps/embed?pb&#x3D;!1m14!1m12!1m3!1d12152.818904021748!2d-3.6521859500000002!3d40.40431525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1700787875586!5m2!1ses!2ses&quot;
+                  width&#x3D;&quot;100%&quot; height&#x3D;&quot;300&quot; style&#x3D;&quot;border:0;&quot; allowfullscreen&#x3D;&quot;&quot; loading&#x3D;&quot;lazy&quot; referrerpolicy&#x3D;&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;
+      &lt;/div&gt;
+      &lt;h2 class&#x3D;&quot;text-body-emphasis&quot;&gt;Visitanos en&lt;/h2&gt;
+      &lt;p class&#x3D;&quot;text-body-emphasis&quot;&gt;Calle de la Cruz, 269, 28161 Madrid&lt;/p&gt;
+      &lt;p class&#x3D;&quot;text-body-emphasis&quot;&gt;Teléfono: (+34)-941454-545&lt;/p&gt;
+      &lt;p class&#x3D;&quot;text-body-emphasis&quot;&gt;Email: support&amp;#64;active.com&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+&lt;footer class&#x3D;&quot;container2 &quot;&gt;
+  &lt;div class&#x3D;&quot;text-center&quot;&gt;
+      &lt;p style&#x3D;&quot;color: antiquewhite;&quot;&gt;&amp;copy; 2023 Escuela de Idiomas    Active-Language&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div id&#x3D;&quot;redes-sociales&quot;&gt;
+      &lt;!-- Botón y logotipo de Facebook --&gt;
+      &lt;a href&#x3D;&quot;https://www.facebook.com/sharer/sharer.php?u&#x3D;&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;text-light&quot;&gt;
+          &lt;img src&#x3D;&quot;assets/imagenes/face.png&quot; alt&#x3D;&quot;Facebook&quot; class&#x3D;&quot;img-fluid redes&quot;/&gt;
+          Facebook
+      &lt;/a&gt;
+
+      &lt;!-- Botón y logotipo de Twitter --&gt;
+      &lt;a href&#x3D;&quot;https://twitter.com/intent/tweet?url&#x3D;&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;text-light&quot;&gt;
+          &lt;img src&#x3D;&quot;assets/imagenes/twitter_x_musk_logo14.jpg&quot; alt&#x3D;&quot;Twitter&quot; class&#x3D;&quot; img-fluid redes &quot;/&gt;
+          Twitter X
+      &lt;/a&gt;
+      &lt;!-- Botón y logotipo de instagram --&gt;
+      &lt;a href&#x3D;&quot;https://www.instagram.com/sprachschule_aktiv_freising/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;text-light&quot;&gt;
+          &lt;img src&#x3D;&quot;assets/imagenes/instagram.png&quot; alt&#x3D;&quot;Facebook&quot; class&#x3D;&quot;img-fluid redes&quot;/&gt;
+          Instagram
+      &lt;/a&gt;
+
+      &lt;!-- Botón y logotipo de whatssapp --&gt;
+      &lt;a href&#x3D;&quot;https://www.whatsapp.com/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;text-light&quot;&gt;
+          &lt;img src&#x3D;&quot;assets/imagenes/whats.png&quot; alt&#x3D;&quot;Twitter&quot; class&#x3D;&quot;img-fluid redes&quot;/&gt;
+          Whatsapp
+      &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;
+&lt;/body&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./home.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* Estilos generales */
+body.fondopantalla {
+    background: linear-gradient(#ffffff, #467980);
+}
+
+header {
+    background-color: #fcfcfc;
+    color: #000;
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 20px 20px 0 0;
+}
+
+h1, h2, h3, h4, p {
+    color: #000;
+    font-family: &#x27;Roboto&#x27;, sans-serif;
+    text-shadow: #6c6b6b 0 0 0;
+}
+
+h1 {
+    padding-top: 50px;
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+.entry-title {
+    font-size: 50px;
+    font-weight: 100;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.somos {
+    font-size: 40px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.parrafo {
+    padding: 15px;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 70%;
+    margin: 0 auto;
+    color: #242121;
+}
+
+/* Estilos para el contenedor y el fondo */
+.contain, .sec1 {
+    background: linear-gradient(#ffffff, #467980);
+    border-radius: 5% 5% 15% 15%;
+    overflow: hidden;
+}
+
+.container, .container2 {
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid #d9dee3;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.73);
+    padding: 20px;
+}
+
+.container2 {
+    background: rgba(7, 7, 7, 0.65);
+    padding: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Estilos para imágenes del header */
+.row.caja {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.image-group, .image-group2 {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.image-group img, .image-group2 img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+.image-group img:hover, .image-group2 img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .image-group img, .image-group2 img {
+        flex: 1 1 100%;
+    }
+}
+
+/* Estilos para enlaces */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Estilos para redes sociales */
+#redes-sociales a {
+    display: inline-block;
+    margin: 5px;
+    color: #bdbcbc;
+    text-shadow: #ffffff 0.1em 0.1em 0.2em;
+}
+
+#redes-sociales .redes {
+    width: 20px;
+    height: 20px;
+}
+
+/* Estilos para el mapa */
+.mapa {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    display: grid;
+    align-items: center;
+}
+
+/* Estilos para el pie de página */
+.container2 {
+    text-align: center;
+    color: antiquewhite;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- <div class="bootstrap-wrapper">  <div class="container">    <div class="row mt20">      <div class = "col-md-6 offset-md-3 text-center">        <h1>Bienvenido al portal de examenes</h1>        <button mat-raised-button color = "primary" [routerLink]="profileRoute">Inicio</button>      </div>    </div>  </div></div> -->  <body class="fondopantalla"><header>  <div class="page-heading">    <div class="contain">        <div class="heading-text">            <h1 class="entry-title">Hola</h1>            <h2>Bienvenido a nuestro sitio web</h2>        </div>    </div></div></header> <main>  <div class="row caja text-center">      <div class="image-group" >          <img src="assets/imagenes/hola.webp" alt="imagen" class="img-fluid custom-image">          <img src="assets/imagenes/languages.jpg" alt="imagen" class="img-fluid custom-image">      </div>  </div>  <br>  <section><div class="container" id="page">  <div class="row">  <p class="somos -bold">Somos la escuela de idiomas Active Language</p>  <!-- se ha usado bootstrap y css para modificar las imagenes -->  <div class="container-fluid">      <div class="image-container1">          <div class="image-group2">              <a href="https://es.wikipedia.org/wiki/Idioma_espa%C3%B1ol">                  <img src="assets/imagenes/hello.jpg" alt="Español"                       data-toggle="tooltip" data-placement="top" width="600"                       title="Aprende Español en tiempo record, gracias a nuestros cursos intensivos."/>                      </a>              <a href="https://es.wikipedia.org/wiki/Idioma_franc%C3%A9s">                  <!-- usamos img-derecha -->                  <img src="assets/imagenes/escuela-idiomas.jpg" alt="Frances"                       data-toggle="tooltip" data-placement="top" width="600"                       title="Aprende Frances en tiempo record, gracias a nuestros cursos intensivos."/>              </a>          </div>          <br>          <p class="parrafo">En Active Language, estamos comprometidos con tu viaje hacia el dominio de los idiomas. Nuestra escuela te brinda la oportunidad de explorar y sumergirte en una amplia variedad de lenguas, culturas y experiencias que enriquecerán tu vida de maneras inimaginables. Desde aprender los fundamentos de un nuevo idioma hasta perfeccionar tus habilidades lingüisticas, nuestros dedicados instructores te guiarán en cada paso del camino. Nuestros cursos dinámicos y personalizados te permiten alcanzar tus objetivos de comunicación en un entorno estimulante y acogedor.          </p>          <p class="parrafo">Desde aprender los fundamentos de un nuevo idioma hasta perfeccionar tus habilidades lingüisticas, nuestros dedicados instructores te guiarán en cada paso del camino. Nuestros cursos dinámicos y personalizados te permiten alcanzar tus objetivos de comunicación en un entorno estimulante y acogedor.          </p>          <p class="parrafo">Descubre nuevas perspectivas, amplía tus horizontes y enriquece tu vida con Active Language.          </p>          <div class="image-group2">              <a href="https://es.wikipedia.org/wiki/Idioma_alem%C3%A1n">                  <img src="assets/imagenes/imagenescuela.jpg" alt="Aleman"                       data-toggle="tooltip" data-placement="top" width="600"                       title="Aprende Aleman en tiempo record, gracias a nuestros cursos intensivos."/>              </a>              <a href="https://es.wikipedia.org/wiki/Idioma_ingl%C3%A9s">                  <!-- usamos img-derecha para mover las imagenes a la derecha -->                  <img src="assets/imagenes/clase-frances.jpg" alt="Ingles"                       data-toggle="tooltip" data-placement="top" width="600"                        title="Aprende Ingles en tiempo record, gracias a nuestros cursos intensivos."/>              </a>          </div>      </div>  </div>  <br></div>  </div>  </section><br>  <!-- dividir con una linea esta seccion -->  <hr>  <br>  <section class="sec1">      <div class="text-center">          <!-- Columna con fotos -->          <div>              <img src="assets/imagenes/titulacion.jpg" alt="imagennes" class="img-fluid rounded-4">              <br>              <br>              <div class="video-container d-flex justify-content-center align-items-center">                  <iframe class="rounded-4" width="580" height="335" src="https://www.youtube.com/embed/GpycTUEd0J4?si=naH6e1oNowgQsJY-" title="YouTube video player" frameborder="0"                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>              </div>              <br>              <img src="assets/imagenes/PalacioCibeles.jpg" alt="Te esperamos en Madrid" class="img-fluid rounded-4"                   data-bs-toggle="modal"                   data-bs-target="#imagenModal"                   data-imagen="assets/imagenes/PalacioCibeles.jpg">          </div>      </div>  </section>  <br>  <br>  <div class="mapa" >      <!-- Google Maps iframe -->      <div class="text-center">          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12152.818904021748!2d-3.6521859500000002!3d40.40431525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1700787875586!5m2!1ses!2ses"                  width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>      </div>      <h2 class="text-body-emphasis">Visitanos en</h2>      <p class="text-body-emphasis">Calle de la Cruz, 269, 28161 Madrid</p>      <p class="text-body-emphasis">Teléfono: (+34)-941454-545</p>      <p class="text-body-emphasis">Email: support&#64;active.com</p>  </div></main><footer class="container2 ">  <div class="text-center">      <p style="color: antiquewhite;">&copy; 2023 Escuela de Idiomas    Active-Language</p>  </div>  <div id="redes-sociales">      <!-- Botón y logotipo de Facebook -->      <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" class="text-light">          <img src="assets/imagenes/face.png" alt="Facebook" class="img-fluid redes"/>          Facebook      </a>      <!-- Botón y logotipo de Twitter -->      <a href="https://twitter.com/intent/tweet?url=" target="_blank" class="text-light">          <img src="assets/imagenes/twitter_x_musk_logo14.jpg" alt="Twitter" class=" img-fluid redes "/>          Twitter X      </a>      <!-- Botón y logotipo de instagram -->      <a href="https://www.instagram.com/sprachschule_aktiv_freising/" target="_blank" class="text-light">          <img src="assets/imagenes/instagram.png" alt="Facebook" class="img-fluid redes"/>          Instagram      </a>      <!-- Botón y logotipo de whatssapp -->      <a href="https://www.whatsapp.com/" target="_blank" class="text-light">          <img src="assets/imagenes/whats.png" alt="Twitter" class="img-fluid redes"/>          Whatsapp      </a>  </div></footer></body></div>'
+    var COMPONENTS = [{'name': 'ActualizarExamenComponent', 'selector': 'app-actualizar-examen'},{'name': 'ActualizarPreguntaComponent', 'selector': 'app-actualizar-pregunta'},{'name': 'AddCategoriaComponent', 'selector': 'app-add-categoria'},{'name': 'AddExamenComponent', 'selector': 'app-add-examen'},{'name': 'AddPreguntaComponent', 'selector': 'app-add-pregunta'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InstruccionesComponent', 'selector': 'app-instrucciones'},{'name': 'LoadExamenComponent', 'selector': 'app-load-examen'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar-user'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'StartComponent', 'selector': 'app-start'},{'name': 'UserDashboardComponent', 'selector': 'app-user-dashboard'},{'name': 'ViewCategoriasComponent', 'selector': 'app-view-categorias'},{'name': 'ViewExamenesComponent', 'selector': 'app-view-examenes'},{'name': 'ViewExamenPreguntasComponent', 'selector': 'app-view-examen-preguntas'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HomeComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

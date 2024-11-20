@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
-import { ExamenService } from './../../../services/examen.service';
+import { ExamenService } from '../../../services/examenservice/examen.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import  Swal  from 'sweetalert2';
-import { CategoriaService } from './../../../services/categoria.service';
+import { CategoriaService } from './../../../services/categoriaservice/categoria.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-examen.component.css']
 })
 export class AddExamenComponent implements OnInit {
-
+  // 
   categorias:any = [];
 
   examenData = {
@@ -19,10 +19,10 @@ export class AddExamenComponent implements OnInit {
     descripcion:'',
     puntosMaximos:'',
     numeroDePreguntas:'',
-    activo:true,
-    categoria:{
-      categoriaId:''
-    }
+    activo:true, 
+    categoriaId:'',
+    usuarioId:'1',
+    
   }
 
   constructor(
@@ -63,9 +63,9 @@ export class AddExamenComponent implements OnInit {
           puntosMaximos : '',
           numeroDePreguntas : '',
           activo:true,
-          categoria:{
-            categoriaId:''
-          }
+          categoriaId:'',
+          usuarioId:'1',
+          
         }
         this.router.navigate(['/admin/examenes']);
       },

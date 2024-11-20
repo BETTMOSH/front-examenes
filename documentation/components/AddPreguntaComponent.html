@@ -1,0 +1,767 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>gestion-examen-frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">gestion-examen-frontend documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AddPreguntaComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/admin/add-pregunta/add-pregunta.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-add-pregunta</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./add-pregunta.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./add-pregunta.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#examenId" >examenId</a>
+                            </li>
+                            <li>
+                                <a href="#pregunta" >pregunta</a>
+                            </li>
+                            <li>
+                                <a href="#titulo" >titulo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#formSubmit" >formSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: ActivatedRoute, preguntaService: <a href="../injectables/PreguntaService.html" target="_self">PreguntaService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/pages/admin/add-pregunta/add-pregunta.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>preguntaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PreguntaService.html" target="_self" >PreguntaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formSubmit"></a>
+                    <span class="name">
+                        <span ><b>formSubmit</b></span>
+                        <a href="#formSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>formSubmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="35"
+                                    class="link-to-prism">src/app/pages/admin/add-pregunta/add-pregunta.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="29"
+                                    class="link-to-prism">src/app/pages/admin/add-pregunta/add-pregunta.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="examenId"></a>
+                    <span class="name">
+                        <span ><b>examenId</b></span>
+                        <a href="#examenId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/pages/admin/add-pregunta/add-pregunta.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pregunta"></a>
+                    <span class="name">
+                        <span ><b>pregunta</b></span>
+                        <a href="#pregunta"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    examen : {},
+    contenido : &#x27;&#x27;,
+    opcion1 : &#x27;&#x27;,
+    opcion2 : &#x27;&#x27;,
+    opcion3 : &#x27;&#x27;,
+    opcion4 : &#x27;&#x27;,
+    respuesta : &#x27;&#x27;
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/pages/admin/add-pregunta/add-pregunta.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="titulo"></a>
+                    <span class="name">
+                        <span ><b>titulo</b></span>
+                        <a href="#titulo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/pages/admin/add-pregunta/add-pregunta.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { PreguntaService } from &#x27;./../../../services/pregunta.service&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+
+@Component({
+  selector: &#x27;app-add-pregunta&#x27;,
+  templateUrl: &#x27;./add-pregunta.component.html&#x27;,
+  styleUrls: [&#x27;./add-pregunta.component.css&#x27;]
+})
+export class AddPreguntaComponent implements OnInit {
+
+  examenId:any;
+  titulo:any;
+  pregunta:any &#x3D; {
+    examen : {},
+    contenido : &#x27;&#x27;,
+    opcion1 : &#x27;&#x27;,
+    opcion2 : &#x27;&#x27;,
+    opcion3 : &#x27;&#x27;,
+    opcion4 : &#x27;&#x27;,
+    respuesta : &#x27;&#x27;
+  }
+
+  constructor(
+    private route:ActivatedRoute,
+    private preguntaService:PreguntaService) { }
+
+  ngOnInit(): void {
+    this.examenId &#x3D; this.route.snapshot.params[&#x27;examenId&#x27;];
+    this.titulo &#x3D; this.route.snapshot.params[&#x27;titulo&#x27;];
+    this.pregunta.examen[&#x27;examenId&#x27;] &#x3D; this.examenId;
+  }                                                                  
+
+  formSubmit(){
+    if(this.pregunta.contenido.trim() &#x3D;&#x3D; &#x27;&#x27; || this.pregunta.contenido &#x3D;&#x3D; null){
+      return;
+    }
+    if(this.pregunta.opcion1.trim() &#x3D;&#x3D; &#x27;&#x27; || this.pregunta.opcion1 &#x3D;&#x3D; null){
+      return;
+    }
+    if(this.pregunta.opcion2.trim() &#x3D;&#x3D; &#x27;&#x27; || this.pregunta.opcion2 &#x3D;&#x3D; null){
+      return;
+    }
+    if(this.pregunta.opcion3.trim() &#x3D;&#x3D; &#x27;&#x27; || this.pregunta.opcion3 &#x3D;&#x3D; null){
+      return;
+    }
+    if(this.pregunta.opcion4.trim() &#x3D;&#x3D; &#x27;&#x27; || this.pregunta.opcion4 &#x3D;&#x3D; null){
+      return;
+    }
+    if(this.pregunta.respuesta.trim() &#x3D;&#x3D; &#x27;&#x27; || this.pregunta.respuesta &#x3D;&#x3D; null){
+      return;
+    }
+
+    this.preguntaService.guardarPregunta(this.pregunta).subscribe({
+      next:(data) &#x3D;&gt; {
+        Swal.fire(&#x27;Pregunta guardada&#x27;,&#x27;La pregunta ha sido agregada con éxito&#x27;,&#x27;success&#x27;);
+        this.pregunta.contenido &#x3D; &#x27;&#x27;;
+        this.pregunta.opcion1 &#x3D; &#x27;&#x27;;
+        this.pregunta.opcion2 &#x3D; &#x27;&#x27;;
+        this.pregunta.opcion3 &#x3D; &#x27;&#x27;;
+        this.pregunta.opcion4 &#x3D; &#x27;&#x27;;
+        this.pregunta.respuesta &#x3D; &#x27;&#x27;;
+      },
+      error:(error) &#x3D;&gt; {
+        Swal.fire(&#x27;Error&#x27;,&#x27;Error al guardar la pregunta en la base de datos&#x27;,&#x27;error&#x27;);
+        console.log(error);
+      }
+    })
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;bootstrap-wrapper&quot;&gt;
+  &lt;div class&#x3D;&quot;row mt20&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+      &lt;h1&gt;Agregar preguntas a &lt;span style&#x3D;&quot;font-weight: bold;&quot;&gt;{{ titulo }}&lt;/span&gt;&lt;/h1&gt;
+      &lt;mat-card&gt;
+        &lt;mat-card-header&gt;
+          &lt;mat-card-subtitle&gt;
+            Preguntas del examen
+          &lt;/mat-card-subtitle&gt;
+        &lt;/mat-card-header&gt;
+        &lt;mat-card-content&gt;
+          &lt;form class&#x3D;&quot;mt20&quot; (submit) &#x3D; &quot;formSubmit()&quot;&gt;
+            &lt;mat-form-field class&#x3D;&quot;w100&quot;&gt;
+              &lt;mat-label&gt;Ingrese las pregunta&lt;/mat-label&gt;
+              &lt;textarea rows&#x3D;&quot;8&quot; matInput placeholder&#x3D;&quot;Escribe aquí&quot; name&#x3D;&quot;contenido&quot; [(ngModel)] &#x3D; &quot;pregunta.contenido&quot;&gt;&lt;/textarea&gt;
+            &lt;/mat-form-field&gt;
+
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                &lt;mat-form-field class&#x3D;&quot;w100&quot;&gt;
+                  &lt;mat-label&gt;Digite la opción 1&lt;/mat-label&gt;
+                  &lt;input
+                  type&#x3D;&quot;text&quot;
+                  matInput
+                  name&#x3D;&quot;opcion1&quot;
+                  [(ngModel)] &#x3D; &quot;pregunta.opcion1&quot;&gt;
+                &lt;/mat-form-field&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                &lt;mat-form-field class&#x3D;&quot;w100&quot;&gt;
+                  &lt;mat-label&gt;Digite la opción 2&lt;/mat-label&gt;
+                  &lt;input
+                  type&#x3D;&quot;text&quot;
+                  matInput
+                  name&#x3D;&quot;opcion2&quot;
+                  [(ngModel)] &#x3D; &quot;pregunta.opcion2&quot;&gt;
+                &lt;/mat-form-field&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                &lt;mat-form-field class&#x3D;&quot;w100&quot;&gt;
+                  &lt;mat-label&gt;Digite la opción 3&lt;/mat-label&gt;
+                  &lt;input
+                  type&#x3D;&quot;text&quot;
+                  matInput
+                  name&#x3D;&quot;opcion3&quot;
+                  [(ngModel)] &#x3D; &quot;pregunta.opcion3&quot;&gt;
+                &lt;/mat-form-field&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                &lt;mat-form-field class&#x3D;&quot;w100&quot;&gt;
+                  &lt;mat-label&gt;Digite la opción 4&lt;/mat-label&gt;
+                  &lt;input
+                  type&#x3D;&quot;text&quot;
+                  matInput
+                  name&#x3D;&quot;opcion4&quot;
+                  [(ngModel)] &#x3D; &quot;pregunta.opcion4&quot;&gt;
+                &lt;/mat-form-field&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;mat-form-field class&#x3D;&quot;w100&quot;&gt;
+              &lt;mat-label&gt;Seleccione la respuesta&lt;/mat-label&gt;
+              &lt;mat-select [(ngModel)] &#x3D; &quot;pregunta.respuesta&quot; name&#x3D;&quot;respuesta&quot;&gt;
+                &lt;mat-option *ngIf &#x3D; &quot;pregunta.opcion1&quot; [value] &#x3D; &quot;pregunta.opcion1&quot;&gt;{{ pregunta.opcion1 }}&lt;/mat-option&gt;
+                &lt;mat-option *ngIf &#x3D; &quot;pregunta.opcion2&quot; [value] &#x3D; &quot;pregunta.opcion2&quot;&gt;{{ pregunta.opcion2 }}&lt;/mat-option&gt;
+                &lt;mat-option *ngIf &#x3D; &quot;pregunta.opcion3&quot; [value] &#x3D; &quot;pregunta.opcion3&quot;&gt;{{ pregunta.opcion3 }}&lt;/mat-option&gt;
+                &lt;mat-option *ngIf &#x3D; &quot;pregunta.opcion4&quot; [value] &#x3D; &quot;pregunta.opcion4&quot;&gt;{{ pregunta.opcion4 }}&lt;/mat-option&gt;
+              &lt;/mat-select&gt;
+            &lt;/mat-form-field&gt;
+
+            &lt;div class&#x3D;&quot;container text-center&quot;&gt;
+              &lt;button mat-raised-button color&#x3D;&quot;primary&quot;&gt;Guardar&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+        &lt;/mat-card-content&gt;
+      &lt;/mat-card&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./add-pregunta.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.w100{
+  width: 100%;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="bootstrap-wrapper">  <div class="row mt20">    <div class="col-md-12">      <h1>Agregar preguntas a <span style="font-weight: bold;">{{ titulo }}</span></h1>      <mat-card>        <mat-card-header>          <mat-card-subtitle>            Preguntas del examen          </mat-card-subtitle>        </mat-card-header>        <mat-card-content>          <form class="mt20" (submit) = "formSubmit()">            <mat-form-field class="w100">              <mat-label>Ingrese las pregunta</mat-label>              <textarea rows="8" matInput placeholder="Escribe aquí" name="contenido" [(ngModel)] = "pregunta.contenido"></textarea>            </mat-form-field>            <div class="row">              <div class="col-md-6">                <mat-form-field class="w100">                  <mat-label>Digite la opción 1</mat-label>                  <input                  type="text"                  matInput                  name="opcion1"                  [(ngModel)] = "pregunta.opcion1">                </mat-form-field>              </div>              <div class="col-md-6">                <mat-form-field class="w100">                  <mat-label>Digite la opción 2</mat-label>                  <input                  type="text"                  matInput                  name="opcion2"                  [(ngModel)] = "pregunta.opcion2">                </mat-form-field>              </div>              <div class="col-md-6">                <mat-form-field class="w100">                  <mat-label>Digite la opción 3</mat-label>                  <input                  type="text"                  matInput                  name="opcion3"                  [(ngModel)] = "pregunta.opcion3">                </mat-form-field>              </div>              <div class="col-md-6">                <mat-form-field class="w100">                  <mat-label>Digite la opción 4</mat-label>                  <input                  type="text"                  matInput                  name="opcion4"                  [(ngModel)] = "pregunta.opcion4">                </mat-form-field>              </div>            </div>            <mat-form-field class="w100">              <mat-label>Seleccione la respuesta</mat-label>              <mat-select [(ngModel)] = "pregunta.respuesta" name="respuesta">                <mat-option *ngIf = "pregunta.opcion1" [value] = "pregunta.opcion1">{{ pregunta.opcion1 }}</mat-option>                <mat-option *ngIf = "pregunta.opcion2" [value] = "pregunta.opcion2">{{ pregunta.opcion2 }}</mat-option>                <mat-option *ngIf = "pregunta.opcion3" [value] = "pregunta.opcion3">{{ pregunta.opcion3 }}</mat-option>                <mat-option *ngIf = "pregunta.opcion4" [value] = "pregunta.opcion4">{{ pregunta.opcion4 }}</mat-option>              </mat-select>            </mat-form-field>            <div class="container text-center">              <button mat-raised-button color="primary">Guardar</button>            </div>          </form>        </mat-card-content>      </mat-card>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'ActualizarExamenComponent', 'selector': 'app-actualizar-examen'},{'name': 'ActualizarPreguntaComponent', 'selector': 'app-actualizar-pregunta'},{'name': 'AddCategoriaComponent', 'selector': 'app-add-categoria'},{'name': 'AddExamenComponent', 'selector': 'app-add-examen'},{'name': 'AddPreguntaComponent', 'selector': 'app-add-pregunta'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InstruccionesComponent', 'selector': 'app-instrucciones'},{'name': 'LoadExamenComponent', 'selector': 'app-load-examen'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar-user'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'StartComponent', 'selector': 'app-start'},{'name': 'UserDashboardComponent', 'selector': 'app-user-dashboard'},{'name': 'ViewCategoriasComponent', 'selector': 'app-view-categorias'},{'name': 'ViewExamenesComponent', 'selector': 'app-view-examenes'},{'name': 'ViewExamenPreguntasComponent', 'selector': 'app-view-examen-preguntas'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AddPreguntaComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AddPreguntaComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

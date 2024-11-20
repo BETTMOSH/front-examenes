@@ -1,12 +1,12 @@
-<mat-card style="margin-left: 10px;">
+<mat-card class="profile-page" id="profile-card" style="margin-left: 10px;">
   <h1>Detalles del perfil</h1>
   <mat-card-content>
-    <div class = "bootstrap-wrapper">
-      <div class = "container">
+    <div class = "bootstrap-wrapper ">
+      <div class = "container ">
         <div class = "text-center">
           <!-- https://www.w3schools.com/howto/img_avatar.png -->
           <img class = "profile-image"
-          [src]="user.foto" alt="foto-perfil">
+            src = "assets/imagenes/gabriel.jpg" alt="foto-perfil">
 
           <h1 class="mt20">{{ user.nombre }} {{ user.apellido }}</h1>
         </div>
@@ -14,32 +14,40 @@
           <div class = "col-md-10 offset-md-1">
             <table class = "table text-center">
               <tr>
-                <td>Nombre de usuario</td>
+                <td>Nombre de usuario:</td>
                 <td>{{ user.username }}</td>
               </tr>
               <tr>
-                <td>ID</td>
-                <td>{{ user.id }}</td>
+                <td>ID:</td>
+                <td>{{ user.usuarioId }}</td>
               </tr>
-              <!-- <tr>
-                <td>Fecha de nacimiento</td>
-                <td>{{ user.fechaNacimiento }}</td>
-              </tr> -->
               <tr>
-                <td>Email</td>
+                <td>Nombre:</td>
+                <td>{{ user.nombre }}</td>
+              </tr>
+              <tr>
+                <td>Apellido:</td>
+                <td>{{ user.apellido }}</td>
+              </tr>
+              <tr>
+                <td>Fecha de nacimiento:</td>
+                <td>{{ user.fechaNacimiento }}</td>
+              </tr>
+              <tr>
+                <td>Email:</td>
                 <td>{{ user.email }}</td>
               </tr>
               <tr>
-                <td>Teléfono</td>
+                <td>Teléfono:</td>
                 <td>{{ user.telefono }}</td>
               </tr>
               
               <tr>
-                <td>Rol</td>
+                <td>Rol:</td>
                 <td>{{ user.authorities[0].authority }}</td>
               </tr>
               <tr>
-                <td>Estado</td>
+                <td>Estado:</td>
                 <td>{{ user.enabled ? "Activo" : "No activo"}}</td>
               </tr>
             </table>
@@ -47,9 +55,13 @@
         </div>
       </div>
     </div>
-    <mat-card-actions class = "text-center">
-      <button mat-raised-button color = "primary">Actualizar</button>
-      <button mat-raised-button color = "accent">Compartir</button>
+    <mat-card-actions class = "text-center col-md-10 offset-md-1 mt10 ">
+      <button (click) = "imprimirPagina()" mat-raised-button color="primary">
+    <mat-icon mat-list-icon>print</mat-icon>Imprimir
+      </button>
+      <button mat-raised-button color = "accent">
+    <mat-icon mat-list-icon>send</mat-icon>Compartir
+      </button>
     </mat-card-actions>
   </mat-card-content>
 </mat-card>

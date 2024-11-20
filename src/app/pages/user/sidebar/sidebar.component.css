@@ -1,0 +1,28 @@
+button {
+    width: 100%;
+    background-color: transparent;
+    color: #3c8bf3;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(60, 139, 243, 0.1);
+    box-shadow: 0px 4px 8px rgba(60, 139, 243, 0.2);
+}
+
+mat-card {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e9f2f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+mat-action-list div[mat-subheader] {
+    font-weight: 600;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+}

@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CategoriaService } from './../../../services/categoria.service';
+import { CategoriaService } from './../../../services/categoriaservice/categoria.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,7 +12,6 @@ import { Component, OnInit } from '@angular/core';
 export class AddCategoriaComponent implements OnInit {
 
   categoria = {
-    categoria: '',
     titulo : '',
     descripcion : ''
   }
@@ -43,20 +42,6 @@ export class AddCategoriaComponent implements OnInit {
         Swal.fire('Error !!','Error al guardar la categoría','error')
       }
   });
-  }/* else{ */
- // Agregar nueva categoría
- /* this.categoriaService.agregarCategoria(this.categoria).subscribe({
-  next: (data: any) => {
-    this.categoria.titulo = '';
-    this.categoria.descripcion = '';
-    Swal.fire('Categoría agregada', 'La categoría ha sido agregada con éxito', 'success');
-    this.router.navigate(['/admin/categorias']);
-  },
-  error: (error) => {
-    console.log(error);
-    Swal.fire('Error !!', 'Error al guardar la categoría', 'error');
   }
-});
-}
-} */
+ 
 }

@@ -10,7 +10,7 @@
           <h1 class="text-center">Registrate aqui</h1>
   
   
-          <form (ngSubmit) = "formSubmit()" enctype="multipart/form-data">
+          <form (ngSubmit) = "formSubmit()" >
             <mat-form-field class="full-width"  appearance = "outline">
               <mat-label>Nombre de usuario</mat-label>
               <input required [(ngModel)] =" user.username" name = "username" matInput placeholder="Digite su nombre de usuario">
@@ -32,7 +32,7 @@
               <input required [(ngModel)] = "user.apellido" name = "apellido" matInput placeholder="Digite su apellido">
             </mat-form-field>
   
-            <!--importamos matPicker para la fehca-->
+            <!--importamos matPicker para la fecha-->
             <mat-form-field class="full-width" appearance="outline">
               <mat-label>Fecha de Nacimiento</mat-label>
               <input matInput [matDatepicker]="picker" required [(ngModel)] = "user.fechaNacimiento" name="fechaN" placeholder="Seleccione su fecha">
@@ -48,15 +48,7 @@
             <mat-form-field class="full-width"  appearance = "outline">
               <mat-label>Telefono</mat-label>
               <input required [(ngModel)] = "user.telefono" name = "telefono" matInput placeholder="Digite su telefono">
-            </mat-form-field>
-  
-            <!-- cargamos la foto incorporando "multipart/form-data" en el form -->
-            <div class="form-group">
-              <label for="file">Foto</label>
-              <input type="file" (change)="onFileSelected($event)">
-            </div>
-  
-            
+            </mat-form-field>            
   
             <div class = "container text-center mt20">
               <button mat-raised-button color="primary">Registrar</button>

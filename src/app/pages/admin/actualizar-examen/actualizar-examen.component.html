@@ -55,7 +55,7 @@
 
         <mat-form-field appearance="fill" class="mt20 w100">
           <mat-label>Categorías</mat-label>
-          <mat-select name="categoria" [(ngModel)] = "examen.categoria.categoriaId">
+          <mat-select name="categoria" [(ngModel)] = "examen.categoriaId">
             <mat-option *ngFor = "let c of categorias" [value] = "c.categoriaId">
               {{ c.titulo }}
             </mat-option>

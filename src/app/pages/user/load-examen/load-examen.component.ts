@@ -1,4 +1,4 @@
-import { ExamenService } from './../../../services/examen.service';
+import { ExamenService } from '../../../services/examenservice/examen.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 

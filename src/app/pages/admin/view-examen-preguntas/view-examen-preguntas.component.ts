@@ -1,5 +1,5 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { PreguntaService } from './../../../services/pregunta.service';
+import { PreguntaService } from './../../../services/preguntaservice/pregunta.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
@@ -13,7 +13,7 @@ export class ViewExamenPreguntasComponent implements OnInit {
 
   examenId:any;
   titulo:any;
-  preguntas:any = [];
+  preguntas:any[] = [];
 
   constructor(private route:ActivatedRoute,private preguntaService:PreguntaService,private snack:MatSnackBar) { }
 

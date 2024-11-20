@@ -2,6 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-2">
+
         <!--Instrucciones-->
         <mat-card style = "margin-top: 70px;">
           <mat-card-content>
@@ -15,6 +16,7 @@
         </mat-card>
       </div>
       <div class="col-md-7">
+
         <!--Preguntas-->
         <ng-container *ngIf = "preguntas">
           <h1 class="mt20">
@@ -24,7 +26,7 @@
 
         <mat-card *ngFor = "let p of preguntas;let i = index">
           <mat-card-content>
-            <p><b>{{ i+1 }}) </b> <span [innerHTML] = "p.contenido"></span></p>
+            <p><b>{{ i+1 }} </b> <span [innerHTML] = "p.contenido"></span></p>
             <mat-divider></mat-divider>
             <div class="row mt20">
               <div class="col-md-8 mt10">
@@ -44,10 +46,11 @@
         </mat-card>
 
         <div class="container text-center mt20 mb20">
-          <button (click) = "enviarCuestionario()" mat-raised-button color="primary">Enviar cuestionario</button>
+          <button (click) = "enviarExamen()" mat-raised-button color="primary">Enviar cuestionario</button>
         </div>
       </div>
       <div class="col-md-3">
+        
         <!--Progreso-->
         <mat-card style ="margin-top:70px;">
           <mat-card-header>
@@ -75,17 +78,27 @@
         <mat-card-header>
           <mat-card-title>
             Resultado de la prueba
-          </mat-card-title>
+          </mat-card-title></mat-card-header>
+          <mat-card-header>
+          <mat-card-subtitle style="font-size: medium;">
+            Usted ha completado el examen con exito <b>Recuerde que puede imprimir su resultado</b>
+          </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="text-center">
           <h1>Puntos conseguidos : {{ puntosConseguidos }}</h1>
           <h1>Respuestas correctas : {{ respuestasCorrectas }}</h1>
+          <h1>Respuestas incorrectas : {{ respuestasIncorrectas }}</h1>
         </mat-card-content>
-        <mat-card-actions class="text-center">
-          <button (click) = "imprimirPagina()" mat-raised-button color="primary">Imprimir</button>
-          <button mat-raised-button color="accent" [routerLink] = "'/user-dashboard/0'">Inicio</button>
-        </mat-card-actions>
+        
       </mat-card>
+      <mat-card-actions class="text-center" style="display: flex; justify-content: center;">
+        <button (click) = "imprimirPagina()" mat-raised-button color="primary">
+          <mat-icon mat-list-icon>print</mat-icon>Imprimir
+        </button>
+        <button mat-raised-button color="accent" [routerLink] = "'/user-dashboard/0'">
+          <mat-icon mat-list-icon>home</mat-icon>Inicio
+        </button>
+      </mat-card-actions>
     </div>
   </div>
 </div>

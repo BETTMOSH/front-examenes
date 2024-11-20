@@ -1,7 +1,7 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CategoriaService } from './../../../services/categoria.service';
+import { CategoriaService } from './../../../services/categoriaservice/categoria.service';
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from 'src/app/services/login.service';
+import { LoginService } from 'src/app/services/loginservice/login.service';
 
 
 @Component({

@@ -1,5 +1,5 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { ExamenService } from './../../../services/examen.service';
+import { ExamenService } from '../../../services/examenservice/examen.service';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 

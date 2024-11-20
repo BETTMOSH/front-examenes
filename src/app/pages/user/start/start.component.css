@@ -1,0 +1,9 @@
+/* Ocultar elementos que no queremos imprimir */
+@media print {
+    button
+  
+    {
+      display: none !important;
+    }
+  
+  }

@@ -1,0 +1,29 @@
+.example-spacer{
+    flex: 1 1 auto;
+  }
+  
+  .navColor{
+    background-color: #3e4a92;
+    padding-right: 20px;
+  }
+  
+  .navColor a, span, button{
+    color: white;
+  }
+
+    .navColor a:hover{
+        color: #81df9d;
+    }
+
+    .example-icon{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        color: white;
+        font-size: 0.8em;
+        margin: 0 1.0em;
+    }
+
+
+    
+

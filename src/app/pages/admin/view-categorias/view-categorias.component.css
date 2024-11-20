@@ -1,0 +1,17 @@
+.titulo{
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-top: 25px;
+}
+
+mat-card {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e9f2f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button{
+    margin: 10px;
+  }

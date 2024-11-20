@@ -1,4 +1,4 @@
-import { PreguntaService } from './../../../services/pregunta.service';
+import { PreguntaService } from './../../../services/preguntaservice/pregunta.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
@@ -30,7 +30,7 @@ export class AddPreguntaComponent implements OnInit {
     this.examenId = this.route.snapshot.params['examenId'];
     this.titulo = this.route.snapshot.params['titulo'];
     this.pregunta.examen['examenId'] = this.examenId;
-  }
+  }                                                                  
 
   formSubmit(){
     if(this.pregunta.contenido.trim() == '' || this.pregunta.contenido == null){

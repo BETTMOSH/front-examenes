@@ -1,4 +1,4 @@
-import { PreguntaService } from './../../../services/pregunta.service';
+import { PreguntaService } from './../../../services/preguntaservice/pregunta.service';
 import { ActivatedRoute } from '@angular/router';
 import { LocationStrategy } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
@@ -11,10 +11,11 @@ import Swal from 'sweetalert2';
 })
 export class StartComponent implements OnInit {
 
-  examenId:any;
+  examenId:number= 0;
   preguntas:any;
   puntosConseguidos = 0;
   respuestasCorrectas = 0;
+  respuestasIncorrectas = 0;
   intentos = 0;
 
   esEnviado = false;
@@ -74,7 +75,7 @@ export class StartComponent implements OnInit {
     })
   }
 
-  enviarCuestionario(){
+  enviarExamen(){
     Swal.fire({
       title: '¿Quieres enviar el examen?',
       showCancelButton: true,
@@ -94,6 +95,7 @@ export class StartComponent implements OnInit {
         console.log(data);
         this.puntosConseguidos = data.puntosMaximos;
         this.respuestasCorrectas = data.respuestasCorrectas;
+        this.respuestasIncorrectas = data.respuestasIncorrectas;
         this.intentos = data.intentos;
         this.esEnviado = true;
       },
@@ -126,7 +128,8 @@ export class StartComponent implements OnInit {
     return `${mm} : min : ${ss} seg`;
   }
 
-  imprimirPagina(){
+    imprimirPagina(){
     window.print();
   }
 }
+

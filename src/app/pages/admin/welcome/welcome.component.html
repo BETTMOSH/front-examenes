@@ -1,31 +1,32 @@
-<mat-card class="mt20">
-   <div class="container">
+<mat-card class="mt20 card-container">
+  <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <mat-card-header>
-          <mat-card-title class="text-center">
-            Bienvenido {{user.username}}
-          </mat-card-title>
-          <mat-card-subtitle class="text-center">Gestión de examenes </mat-card-subtitle>
+        <mat-card-header class="header-container">
+          <img mat-card-avatar src="../../../../assets/iconoActive.png" alt="Profile Image" class="profile-image">
+          <div class="header-text">
+            <mat-card-title class="text-center title">
+              Bienvenido {{user.username}}
+            </mat-card-title>
+            <mat-card-subtitle class="text-center subtitle">
+              Gestión de exámenes
+            </mat-card-subtitle>
+          </div>
         </mat-card-header>
-        <mat-card-content class="ml30">
-          <h1></h1>
-          <p></p>
+        <mat-card-content class="content-container">
+          <h2 class="section-title">Funciones como administrador</h2>
+          <ul class="admin-functions">
+            <li><mat-icon class="icon">category</mat-icon> Gestionar las categorías</li>
+            <li><mat-icon class="icon">quiz</mat-icon> Gestionar los exámenes</li>
+            <li><mat-icon class="icon">assignment</mat-icon> Asignar exámenes a distintas categorías</li>
+            <li><mat-icon class="icon">help_outline</mat-icon> Gestionar las preguntas</li>
+            <li><mat-icon class="icon">task</mat-icon> Asignar preguntas a cada examen</li>
+            <li><mat-icon class="icon">grade</mat-icon> Asignar puntaje a las preguntas</li>
+            <li><mat-icon class="icon">print</mat-icon> Permitir al alumno imprimir su resultado</li>
+          </ul><br>
           <mat-divider></mat-divider>
-          <br>
-          <h1 style="margin-left: 18px;">Funciones como administrador</h1>
-          <ul>
-            <li>Gestionar las	categorías</li>
-            <li>Gestionar los exámenes</li>
-            <li>Asignar exámenes a distintas categorías</li>
-            <li>Gestionar las preguntas</li>
-            <li>Asignar preguntas a cada examen</li>
-            <li>Asignar puntaje a las preguntas</li>
-          </ul>
-          <mat-divider></mat-divider>
-          <br>
         </mat-card-content>
       </div>
     </div>
-   </div>
+  </div>
 </mat-card>

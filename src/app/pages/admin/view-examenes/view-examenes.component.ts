@@ -1,5 +1,5 @@
 import  Swal  from 'sweetalert2';
-import { ExamenService } from './../../../services/examen.service';
+import { ExamenService } from '../../../services/examenservice/examen.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,12 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewExamenesComponent implements OnInit {
 
-  examenes : any = [
+  examenes : any = [];
 
-  ]
+  constructor(private examenService:ExamenService) {}
 
-  constructor(private examenService:ExamenService) { }
-
+  // Se obtienen los exámenes de la base de datos y se almacenan en la variable examenes
   ngOnInit(): void {
     this.examenService.listarCuestionarios().subscribe({
       next:(dato:any) => {
@@ -27,7 +26,7 @@ export class ViewExamenesComponent implements OnInit {
       }
     })
   }
-
+  //metodo modal o alerta para eliminar examen
   eliminarExamen(examenId:any){
     Swal.fire({
       title:'Eliminar examen',
@@ -39,7 +38,7 @@ export class ViewExamenesComponent implements OnInit {
       confirmButtonText:'Eliminar',
       cancelButtonText:'Cancelar'
     }).then((result) => {
-      if(result.isConfirmed){
+      if(result.isConfirmed){ //propiedad de SweetAlert "booblean"
         this.examenService.eliminarExamen(examenId).subscribe({
           next:(data) => {
             this.examenes = this.examenes.filter((examen:any) => examen.examenId != examenId);

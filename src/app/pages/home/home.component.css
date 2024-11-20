@@ -1,1 +1,148 @@
+/* Estilos generales */
+body.fondopantalla {
+    background: linear-gradient(#ffffff, #467980);
+}
 
+header {
+    background-color: #fcfcfc;
+    color: #000;
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 20px 20px 0 0;
+}
+
+h1, h2, h3, h4, p {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: #6c6b6b 0 0 0;
+}
+
+h1 {
+    padding-top: 50px;
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+.entry-title {
+    font-size: 50px;
+    font-weight: 100;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.somos {
+    font-size: 40px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.parrafo {
+    padding: 15px;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 70%;
+    margin: 0 auto;
+    color: #242121;
+}
+
+/* Estilos para el contenedor y el fondo */
+.contain, .sec1 {
+    background: linear-gradient(#ffffff, #467980);
+    border-radius: 5% 5% 15% 15%;
+    overflow: hidden;
+}
+
+.container, .container2 {
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid #d9dee3;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.73);
+    padding: 20px;
+}
+
+.container2 {
+    background: rgba(7, 7, 7, 0.65);
+    padding: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Estilos para imágenes del header */
+.row.caja {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.image-group, .image-group2 {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.image-group img, .image-group2 img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+.image-group img:hover, .image-group2 img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .image-group img, .image-group2 img {
+        flex: 1 1 100%;
+    }
+}
+
+/* Estilos para enlaces */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Estilos para redes sociales */
+#redes-sociales a {
+    display: inline-block;
+    margin: 5px;
+    color: #bdbcbc;
+    text-shadow: #ffffff 0.1em 0.1em 0.2em;
+}
+
+#redes-sociales .redes {
+    width: 20px;
+    height: 20px;
+}
+
+/* Estilos para el mapa */
+.mapa {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    display: grid;
+    align-items: center;
+}
+
+/* Estilos para el pie de página */
+.container2 {
+    text-align: center;
+    color: antiquewhite;
+}

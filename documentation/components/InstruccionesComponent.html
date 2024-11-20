@@ -1,0 +1,731 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>gestion-examen-frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">gestion-examen-frontend documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  InstruccionesComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/user/instrucciones/instrucciones.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-instrucciones</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./instrucciones.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./instrucciones.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#examen" >examen</a>
+                            </li>
+                            <li>
+                                <a href="#examenId" >examenId</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#empezarExamen" >empezarExamen</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(examenService: <a href="../injectables/ExamenService.html" target="_self">ExamenService</a>, route: ActivatedRoute, router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/pages/user/instrucciones/instrucciones.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>examenService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ExamenService.html" target="_self" >ExamenService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="empezarExamen"></a>
+                    <span class="name">
+                        <span ><b>empezarExamen</b></span>
+                        <a href="#empezarExamen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>empezarExamen()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="35"
+                                    class="link-to-prism">src/app/pages/user/instrucciones/instrucciones.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="22"
+                                    class="link-to-prism">src/app/pages/user/instrucciones/instrucciones.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="examen"></a>
+                    <span class="name">
+                        <span ><b>examen</b></span>
+                        <a href="#examen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Object()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/pages/user/instrucciones/instrucciones.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="examenId"></a>
+                    <span class="name">
+                        <span ><b>examenId</b></span>
+                        <a href="#examenId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/pages/user/instrucciones/instrucciones.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { ExamenService } from &#x27;./../../../services/examen.service&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+
+@Component({
+  selector: &#x27;app-instrucciones&#x27;,
+  templateUrl: &#x27;./instrucciones.component.html&#x27;,
+  styleUrls: [&#x27;./instrucciones.component.css&#x27;]
+})
+export class InstruccionesComponent implements OnInit {
+
+  examenId:any;
+  examen:any &#x3D; new Object();
+
+  constructor(
+    private examenService:ExamenService,
+    private route:ActivatedRoute,
+    private router:Router
+  ) { }
+
+  ngOnInit(): void {
+    this.examenId &#x3D; this.route.snapshot.params[&#x27;examenId&#x27;];
+    this.examenService.obtenerExamen(this.examenId).subscribe({
+      next: (data:any) &#x3D;&gt; {
+        console.log(data);
+        this.examen &#x3D; data;
+      },
+      error: (error) &#x3D;&gt; {
+        console.log(error);
+      }
+  })
+  }
+
+  empezarExamen(){
+    Swal.fire({
+      title:&#x27;¿Quieres comenzar el examen?&#x27;,
+      showCancelButton:true,
+      cancelButtonText:&#x27;Cancelar&#x27;,
+      confirmButtonText:&#x27;Empezar&#x27;,
+      icon:&#x27;info&#x27;
+    }).then((result:any) &#x3D;&gt; {
+      if(result.isConfirmed){
+        this.router.navigate([&#x27;/start/&#x27;+this.examenId]);
+      }
+    })
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- &lt;div class&#x3D;&quot;bootstrap-wrapper&quot;&gt;
+  &lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+        &lt;mat-card class&#x3D;&quot;mt20&quot;&gt;
+          &lt;mat-card-header&gt;
+            &lt;mat-card-title&gt;
+              Lea las instrucciones de esta página cuidadosamente
+            &lt;/mat-card-title&gt;
+          &lt;/mat-card-header&gt;
+          &lt;mat-card-subtitle&gt;Un paso más para ir&lt;/mat-card-subtitle&gt;
+          &lt;mat-card-content class&#x3D;&quot;ml30&quot;&gt;
+            &lt;h1&gt;{{ examen.titulo }}&lt;/h1&gt;
+            &lt;p&gt;{{ examen.descripcion }}&lt;/p&gt;
+            &lt;mat-divider&gt;&lt;/mat-divider&gt;
+          &lt;br&gt;
+          &lt;h1&gt;Instrucciones importantes&lt;/h1&gt;
+
+          &lt;ul&gt;
+            &lt;li&gt;Este cuestionario es solo para fines de práctica&lt;/li&gt;
+            &lt;li&gt;Tienes que enviar el cuestionario en &lt;b&gt;{{ examen.numeroDePreguntas * 2 }} minutos&lt;/b&gt;&lt;/li&gt;
+            &lt;li&gt;Puede intentar el cuestionario cualquier cantidad de veces&lt;/li&gt;
+            &lt;li&gt;Hay &lt;b&gt;{{ examen.puntosMaximos/examen.numeroDePreguntas }} puntos por pregunta&lt;/b&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;mat-divider&gt;&lt;/mat-divider&gt;
+          &lt;br&gt;
+          &lt;h1&gt;Intentos de la prueba&lt;/h1&gt;
+          &lt;ul&gt;
+            &lt;li&gt;Presione el boton &lt;b&gt;Empezar&lt;/b&gt; para iniciar el examen&lt;/li&gt;
+            &lt;li&gt;El tiempo comenzará en el momento en que haga click en el botón de inicio&lt;/li&gt;
+            &lt;li&gt;No puede reanudar este cuestionario si se interrumpe por algún motivo&lt;/li&gt;
+            &lt;li&gt;Desplácese hacia abajo para pasar a la siguiente pregunta&lt;/li&gt;
+            &lt;li&gt;Haga clic en el botón enviar cuestionario al finalizar el cuestionario&lt;/li&gt;
+            &lt;li&gt;El informe de la prueba se genera automáticamente en forma de copia PDF&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/mat-card-content&gt;
+        &lt;mat-card-actions class&#x3D;&quot;text-center mb20&quot;&gt;
+          &lt;button (click) &#x3D; &quot;empezarExamen()&quot; mat-raised-button color&#x3D;&quot;primary&quot;&gt;
+            Comenzar prueba
+          &lt;/button&gt;
+        &lt;/mat-card-actions&gt;
+        &lt;/mat-card&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt; --&gt;
+
+&lt;div class&#x3D;&quot;exam-instructions-wrapper&quot;&gt;
+  &lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;div class&#x3D;&quot;row justify-content-center&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+        &lt;mat-card class&#x3D;&quot;mt-3&quot;&gt;
+          &lt;mat-card-header&gt;
+            &lt;mat-card-title class&#x3D;&quot;text-center font-weight-bold&quot;&gt;
+              Lea las instrucciones de esta página cuidadosamente
+            &lt;/mat-card-title&gt;
+            &lt;mat-card-subtitle class&#x3D;&quot;text-center text-muted&quot;&gt;Un paso más para ir&lt;/mat-card-subtitle&gt;
+          &lt;/mat-card-header&gt;
+
+          &lt;mat-card-content class&#x3D;&quot;px-4 py-3&quot;&gt;
+            &lt;h2 class&#x3D;&quot;font-weight-bold text-primary&quot;&gt;{{ examen.titulo }}&lt;/h2&gt;
+            &lt;p&gt;{{ examen.descripcion }}&lt;/p&gt;
+            &lt;mat-divider class&#x3D;&quot;my-4&quot;&gt;&lt;/mat-divider&gt;
+
+            &lt;h3 class&#x3D;&quot;text-secondary&quot;&gt;Instrucciones importantes&lt;/h3&gt;
+            &lt;mat-list dense&gt;
+              &lt;mat-list-item&gt;Este exámen se ha desarrollado en base al contenido del temario durante el curso.&lt;/mat-list-item&gt;
+              &lt;mat-list-item&gt;Tienes que enviar el cuestionario en &lt;b&gt;{{ examen.numeroDePreguntas * 2 }} minutos&lt;/b&gt;&lt;/mat-list-item&gt;
+              &lt;mat-list-item&gt;Puede intentar el cuestionario cualquier cantidad de veces&lt;/mat-list-item&gt;
+              &lt;mat-list-item&gt;Hay &lt;b&gt;{{ examen.puntosMaximos / examen.numeroDePreguntas }} puntos por pregunta&lt;/b&gt;&lt;/mat-list-item&gt;
+            &lt;/mat-list&gt;
+            &lt;mat-divider class&#x3D;&quot;my-4&quot;&gt;&lt;/mat-divider&gt;
+
+            &lt;h3 class&#x3D;&quot;text-secondary&quot;&gt;Intentos de la prueba&lt;/h3&gt;
+            &lt;mat-list dense&gt;
+              &lt;mat-list-item&gt;Presione el botón &lt;b&gt;Empezar&lt;/b&gt; para iniciar el examen&lt;/mat-list-item&gt;
+              &lt;mat-list-item&gt;El tiempo comenzará en el momento en que haga click en el botón de inicio&lt;/mat-list-item&gt;
+              &lt;mat-list-item&gt;No puede reanudar este cuestionario si se interrumpe por algún motivo&lt;/mat-list-item&gt;
+              &lt;mat-list-item&gt;Desplácese hacia abajo para pasar a la siguiente pregunta&lt;/mat-list-item&gt;
+              &lt;mat-list-item&gt;Haga clic en el botón enviar cuestionario al finalizar el cuestionario&lt;/mat-list-item&gt;
+              &lt;mat-list-item&gt;El informe de la prueba se genera automáticamente en forma de copia PDF&lt;/mat-list-item&gt;
+            &lt;/mat-list&gt;
+          &lt;/mat-card-content&gt;
+
+          &lt;mat-card-actions class&#x3D;&quot;flex justify-content-center&quot;&gt;
+            &lt;button (click)&#x3D;&quot;empezarExamen()&quot; mat-raised-button color&#x3D;&quot;primary&quot;&gt;
+              Comenzar prueba
+            &lt;/button&gt;
+          &lt;/mat-card-actions&gt;
+        &lt;/mat-card&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./instrucciones.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- <div class="bootstrap-wrapper">  <div class="container">    <div class="row">      <div class="col-md-12">        <mat-card class="mt20">          <mat-card-header>            <mat-card-title>              Lea las instrucciones de esta página cuidadosamente            </mat-card-title>          </mat-card-header>          <mat-card-subtitle>Un paso más para ir</mat-card-subtitle>          <mat-card-content class="ml30">            <h1>{{ examen.titulo }}</h1>            <p>{{ examen.descripcion }}</p>            <mat-divider></mat-divider>          <br>          <h1>Instrucciones importantes</h1>          <ul>            <li>Este cuestionario es solo para fines de práctica</li>            <li>Tienes que enviar el cuestionario en <b>{{ examen.numeroDePreguntas * 2 }} minutos</b></li>            <li>Puede intentar el cuestionario cualquier cantidad de veces</li>            <li>Hay <b>{{ examen.puntosMaximos/examen.numeroDePreguntas }} puntos por pregunta</b></li>          </ul>          <mat-divider></mat-divider>          <br>          <h1>Intentos de la prueba</h1>          <ul>            <li>Presione el boton <b>Empezar</b> para iniciar el examen</li>            <li>El tiempo comenzará en el momento en que haga click en el botón de inicio</li>            <li>No puede reanudar este cuestionario si se interrumpe por algún motivo</li>            <li>Desplácese hacia abajo para pasar a la siguiente pregunta</li>            <li>Haga clic en el botón enviar cuestionario al finalizar el cuestionario</li>            <li>El informe de la prueba se genera automáticamente en forma de copia PDF</li>          </ul>        </mat-card-content>        <mat-card-actions class="text-center mb20">          <button (click) = "empezarExamen()" mat-raised-button color="primary">            Comenzar prueba          </button>        </mat-card-actions>        </mat-card>      </div>    </div>  </div></div> --><div class="exam-instructions-wrapper">  <div class="container">    <div class="row justify-content-center">      <div class="col-md-8">        <mat-card class="mt-3">          <mat-card-header>            <mat-card-title class="text-center font-weight-bold">              Lea las instrucciones de esta página cuidadosamente            </mat-card-title>            <mat-card-subtitle class="text-center text-muted">Un paso más para ir</mat-card-subtitle>          </mat-card-header>          <mat-card-content class="px-4 py-3">            <h2 class="font-weight-bold text-primary">{{ examen.titulo }}</h2>            <p>{{ examen.descripcion }}</p>            <mat-divider class="my-4"></mat-divider>            <h3 class="text-secondary">Instrucciones importantes</h3>            <mat-list dense>              <mat-list-item>Este exámen se ha desarrollado en base al contenido del temario durante el curso.</mat-list-item>              <mat-list-item>Tienes que enviar el cuestionario en <b>{{ examen.numeroDePreguntas * 2 }} minutos</b></mat-list-item>              <mat-list-item>Puede intentar el cuestionario cualquier cantidad de veces</mat-list-item>              <mat-list-item>Hay <b>{{ examen.puntosMaximos / examen.numeroDePreguntas }} puntos por pregunta</b></mat-list-item>            </mat-list>            <mat-divider class="my-4"></mat-divider>            <h3 class="text-secondary">Intentos de la prueba</h3>            <mat-list dense>              <mat-list-item>Presione el botón <b>Empezar</b> para iniciar el examen</mat-list-item>              <mat-list-item>El tiempo comenzará en el momento en que haga click en el botón de inicio</mat-list-item>              <mat-list-item>No puede reanudar este cuestionario si se interrumpe por algún motivo</mat-list-item>              <mat-list-item>Desplácese hacia abajo para pasar a la siguiente pregunta</mat-list-item>              <mat-list-item>Haga clic en el botón enviar cuestionario al finalizar el cuestionario</mat-list-item>              <mat-list-item>El informe de la prueba se genera automáticamente en forma de copia PDF</mat-list-item>            </mat-list>          </mat-card-content>          <mat-card-actions class="flex justify-content-center">            <button (click)="empezarExamen()" mat-raised-button color="primary">              Comenzar prueba            </button>          </mat-card-actions>        </mat-card>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'ActualizarExamenComponent', 'selector': 'app-actualizar-examen'},{'name': 'ActualizarPreguntaComponent', 'selector': 'app-actualizar-pregunta'},{'name': 'AddCategoriaComponent', 'selector': 'app-add-categoria'},{'name': 'AddExamenComponent', 'selector': 'app-add-examen'},{'name': 'AddPreguntaComponent', 'selector': 'app-add-pregunta'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InstruccionesComponent', 'selector': 'app-instrucciones'},{'name': 'LoadExamenComponent', 'selector': 'app-load-examen'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar-user'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'StartComponent', 'selector': 'app-start'},{'name': 'UserDashboardComponent', 'selector': 'app-user-dashboard'},{'name': 'ViewCategoriasComponent', 'selector': 'app-view-categorias'},{'name': 'ViewExamenesComponent', 'selector': 'app-view-examenes'},{'name': 'ViewExamenPreguntasComponent', 'selector': 'app-view-examen-preguntas'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'InstruccionesComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'InstruccionesComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
