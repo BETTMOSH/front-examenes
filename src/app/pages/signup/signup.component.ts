@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from './../../services/usuarioservice/user.service';
 import { Component, OnInit } from '@angular/core';
 import { formatDate } from '@angular/common';
+import { Usuario } from 'src/app/interfaces/usuario';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { formatDate } from '@angular/common';
 })
 export class SignupComponent implements OnInit {
 
-  public user = {
+  public user: Usuario = {
     username : '',
     password : '',
     nombre : '',
@@ -29,10 +30,10 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {}
 
   formSubmit(){
-
     console.log(this.user);
+
     if(this.user.username == '' || this.user.username == null){
-      this.snack.open('El nombre de usuario es requerido !!','Aceptar',{
+      this.snack.open('El nombre de usuario es obligatorio !!','Aceptar',{
         duration : 3000,
         verticalPosition : 'top',
         horizontalPosition : 'center'

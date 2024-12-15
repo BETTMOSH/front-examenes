@@ -1,4 +1,4 @@
-<div class = "bootstrap-wrapper">
+<!-- <div class = "bootstrap-wrapper">
     <div class = "container">
       <div class = "row mt20">
         <div class = "col-md-6 offset-md-3">
@@ -31,33 +31,52 @@
         </div>
       </div>
     </div>
-  </div>
-  
+  </div> -->
 
 
-  <!-- <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
-    <div class="text-center mb-5">
-        <img src="assets/images/blocks/logos/hyper.svg" alt="Image" height="50" class="mb-3">
-        <div class="text-900 text-3xl font-medium mb-3">Welcome Back</div>
-        <span class="text-600 font-medium line-height-3">Don't have an account?</span>
-        <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Create today!</a>
-    </div>
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row mt20">
+      <div class="col-md-6 offset-md-3 pt-5">
+        <mat-card class="login">
+          <div class="bg-surface-50 dark:bg-surface-950 ">
+            <div class="dark:bg-surface-900 shadow-lg rounded-lg w-full">
+              <div class="text-center mb-6">
+                <img src="../../../assets/login1.png" width = "200" height = "200" style="padding-top:20px;">
+                <h1 class="text-3xl font-bold dark:text-gray-100 mt-5">Bienvenido</h1>
+                <p>
+                  ¿Aún no tienes una cuenta?
+                  <a href="#" class="text-primary font-semibold cursor-pointer">¡Regístrate ahora!</a>
+                </p>
+              </div>
 
-    <div>
-        <label for="email1" class="block text-900 font-medium mb-2">Email</label>
-        <input id="email1" type="text" placeholder="Email address" pInputText class="w-full mb-3">
+              <form (ngSubmit) = "formSubmit()">
+                <mat-form-field class = "w-full "  appearance = "outline">
+                  <mat-label>Usuario</mat-label>
+                  <input [(ngModel)] = "loginData.username" name = "username" required  matInput placeholder="Nombre de usuario" autocomplete="username">
+                  <mat-icon matSuffix>mail</mat-icon>
+                </mat-form-field>
 
-        <label for="password1" class="block text-900 font-medium mb-2">Password</label>
-        <input id="password1" type="password" placeholder="Password" pInputText class="w-full mb-3">
+                <mat-form-field class = "w-full "  appearance = "outline">
+                  <mat-label>Contraseña</mat-label>
+                  <input [(ngModel)] = "loginData.password" name = "password" required  type="password" matInput placeholder="Digite su contraseña" autocomplete="current-password">
+                  <mat-icon matSuffix>visibility</mat-icon>
+                </mat-form-field>
 
-        <div class="flex align-items-center justify-content-between mb-6">
-            <div class="flex align-items-center">
-                <p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox>
-                <label for="rememberme1" class="text-900">Remember me</label>
+                <div class="flex items-center justify-center mb-6">
+                  <mat-checkbox>Recordarme</mat-checkbox>
+                  <a href="#" class="text-primary font-semibold cursor-pointer">¿Olvidaste tu contraseña?</a>
+                </div>
+                <div class="boton-log mt20 pt-4">
+                <button mat-raised-button color="primary" class="w-full">
+                  <mat-icon>login</mat-icon>
+                  Iniciar Sesión
+                </button>
+              </div>
+              </form>
             </div>
-            <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a>
-        </div>
-
-        <button pButton pRipple label="Sign In" icon="pi pi-user" class="w-full"></button>
+          </div>
+        </mat-card>
+      </div>
     </div>
-</div> -->
+  </div>

@@ -14,13 +14,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HomeComponent } from './pages/home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { authInterceptorProviders } from './components/interceptor/auth.interceptor';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 //Loader de ngx-ui-loader
@@ -51,6 +52,7 @@ import { SidebarComponent as UserSidebar} from './pages/user/sidebar/sidebar.com
 import { LoadExamenComponent } from './pages/user/load-examen/load-examen.component';
 import { InstruccionesComponent } from './pages/user/instrucciones/instrucciones.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -78,6 +80,7 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     LoadExamenComponent,
     InstruccionesComponent,
     StartComponent,
+    FooterComponent,
 
   ],
   
@@ -101,6 +104,8 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     MatSelectModule,
     MatProgressSpinnerModule,
     NgxUiLoaderModule,
+    MatCheckboxModule,
+    ReactiveFormsModule,
     
     NgxUiLoaderHttpModule.forRoot({
       showForeground:true

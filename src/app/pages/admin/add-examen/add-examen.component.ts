@@ -4,6 +4,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import  Swal  from 'sweetalert2';
 import { CategoriaService } from './../../../services/categoriaservice/categoria.service';
 import { Component, OnInit } from '@angular/core';
+import { Examen } from 'src/app/interfaces/examen';
+import { Categoria } from 'src/app/interfaces/categoria';
 
 @Component({
   selector: 'app-add-examen',
@@ -14,7 +16,7 @@ export class AddExamenComponent implements OnInit {
   // 
   categorias:any = [];
 
-  examenData = {
+  examenData: Examen = {
     titulo:'',
     descripcion:'',
     puntosMaximos:'',
@@ -33,7 +35,7 @@ export class AddExamenComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoriaService.listarCategorias().subscribe({
-      next:(data:any) => {
+      next:(data) => {
         this.categorias = data;
         console.log(this.categorias);
       },
@@ -44,7 +46,7 @@ export class AddExamenComponent implements OnInit {
   })
   }
 
-  guardarCuestionario(){
+  guardarExamen(){
     console.log(this.examenData);
     if(this.examenData.titulo.trim() == '' || this.examenData.titulo == null){
       this.snack.open('El título es requerido','',{

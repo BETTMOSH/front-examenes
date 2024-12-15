@@ -1,0 +1,54 @@
+.container2 {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background: #011d6bd3;
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Estilos para redes sociales */
+#redes-sociales a {
+    display: inline-block;
+    margin: 5px;
+    color: #bdbcbc;
+    text-shadow: #ffffff 0.1em 0.1em 0.2em;
+}
+
+#redes-sociales .redes {
+    width: 20px;
+    height: 20px;
+}
+
+/* Estilos para el mapa */
+.mapa {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    display: grid;
+    align-items: center;
+}
+
+/* Estilos para el pie de página */
+.container2 {
+    text-align: center;
+    color: antiquewhite;
+}

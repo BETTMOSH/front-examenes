@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { TYPE } from 'src/app/values.constants';
+import { Login } from 'src/app/interfaces/login';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { TYPE } from 'src/app/values.constants';
 export class LoginComponent implements OnInit {
 
   //creamos un objeto para almacenar los datos del formulario
-  loginData = {
+  loginData: Login = {
     "username" : '',
     "password" : '',
   }

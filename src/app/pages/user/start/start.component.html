@@ -8,9 +8,9 @@
           <mat-card-content>
             <h3><b>Instrucciones</b></h3>
             <ul>
-              <li>No actualice la página, de lo contrario obtendrá nuevas preguntas en este cuestionario</li>
-              <li>No cambies las pestañas</li>
-              <li>No minimices la ventana</li>
+              <li>No actualice la página, de lo contrario se enviara la respuesta como incorrecta</li>
+              <br><li>Intente no copiar</li><br>
+              <li>Lea bien las preguntas antes de contestar</li>
             </ul>
           </mat-card-content>
         </mat-card>
@@ -51,7 +51,7 @@
       </div>
       <div class="col-md-3">
         
-        <!--Progreso-->
+        <!--Temporizador-->
         <mat-card style ="margin-top:70px;">
           <mat-card-header>
             <mat-card-title>
@@ -71,6 +71,7 @@
   </div>
 </div>
 
+  <!--Resultado-->
 <div class="bootstrap-wrapper" *ngIf = "esEnviado">
   <div class="container mt20">
     <div class="col-md-6 offset-md-3">

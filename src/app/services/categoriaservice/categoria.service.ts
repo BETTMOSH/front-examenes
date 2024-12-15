@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import baserUrl from '../helperUrl';
+import { Categoria } from 'src/app/interfaces/categoria';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class CategoriaService {
     return this.http.get(`${baserUrl}/categoria/`);
   }
 
-  public agregarCategoria(categoria:any){
+  public agregarCategoria(categoria:Categoria){
     return this.http.post(`${baserUrl}/categoria/`,categoria);
   }
 

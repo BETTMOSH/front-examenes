@@ -1,0 +1,18 @@
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+    
+  }
+  
+  .content {
+    flex: 1; /* Esto empuja el footer hacia abajo */
+    
+  }
+  
+  app-footer {
+    background-color: #ffffff; /* Opcional: color de fondo del footer */
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }

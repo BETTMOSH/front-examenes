@@ -1,11 +1,13 @@
 .card-container {
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #f4f8fb;
-    padding: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    margin: 10px;
+    padding-left: 20%;
     position: relative;
     overflow: hidden;
     background-size: cover;
+    
 }
 
 .header-container {
@@ -41,6 +43,7 @@
     color: #333;
 }
 
+/* funciones */
 .section-title {
     margin-left: 20px;
     font-size: 1.4rem;
@@ -54,11 +57,12 @@
     margin-left: 18px;
 }
 
+/*lista funciones*/
 .admin-functions li {
     display: flex;
     align-items: center;
     font-size: 1rem;
-    color: #2e7ecf;
+    color: #205185;
     margin: 10px 0;
 }
 

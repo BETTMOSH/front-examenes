@@ -2,3 +2,7 @@
   background-image: url('../../../../assets/test.png');
   background-size: cover;
 }
+
+img {
+  border-radius: 10px;
+}

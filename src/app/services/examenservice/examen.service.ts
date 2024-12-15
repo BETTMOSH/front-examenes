@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import baserUrl from '../helperUrl';
 import { CategoriaService } from '../categoriaservice/categoria.service';
+import { Examen } from 'src/app/interfaces/examen';
 
 @Injectable({
   providedIn: 'root'
@@ -14,23 +15,23 @@ export class ExamenService {
     return this.http.get(`${baserUrl}/examen/`);
   }
 
-  public agregarExamen(examen:any){
+  public agregarExamen(examen:Examen){
     return this.http.post(`${baserUrl}/examen/`,examen);
   }
 
-  public eliminarExamen(examenId:any){
+  public eliminarExamen(examenId:number){
     return this.http.delete(`${baserUrl}/examen/${examenId}`);
   }
 
-  public obtenerExamen(examenId:any){
+  public obtenerExamen(examenId:number){
     return this.http.get(`${baserUrl}/examen/${examenId}`);
   }
 
-  public actualizarExamen(examen:any){
+  public actualizarExamen(examen:string){
     return this.http.put(`${baserUrl}/examen/`,examen);
   }
 
-  public listarExamenesDeUnaCategoria(categoriaId:any){
+  public listarExamenesDeUnaCategoria(categoriaId:number){
     return this.http.get(`${baserUrl}/examen/categoria/${categoriaId}`);
   }
 
@@ -38,7 +39,7 @@ export class ExamenService {
     return this.http.get(`${baserUrl}/examen/activo`);
   }
 
-  public obtenerExamenesActivosDeUnaCategoria(categoriaId:any){
+  public obtenerExamenesActivosDeUnaCategoria(categoriaId:number){
     return this.http.get(`${baserUrl}/examen/categoria/activo/${categoriaId}`);
   }
 }

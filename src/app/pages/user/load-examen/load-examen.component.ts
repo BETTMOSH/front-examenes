@@ -1,5 +1,5 @@
 import { ExamenService } from '../../../services/examenservice/examen.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,12 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoadExamenComponent implements OnInit {
 
-  catId:any;
+  catId:number = 0;
   examenes:any;
 
   constructor(
     private route:ActivatedRoute,
-    private examenService:ExamenService
+    private examenService:ExamenService,
+    
   ) { }
 
   ngOnInit(): void {
@@ -36,7 +37,7 @@ export class LoadExamenComponent implements OnInit {
         else{
           console.log("Cargando un examen en específico");
           this.examenService.obtenerExamenesActivosDeUnaCategoria(this.catId).subscribe({
-            next: (data:any) => {
+            next: (data) => {
               this.examenes = data;
               console.log(this.examenes);
             },
@@ -47,5 +48,7 @@ export class LoadExamenComponent implements OnInit {
         }
       })
   }
+
+  
 
 }

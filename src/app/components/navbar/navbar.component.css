@@ -3,16 +3,18 @@
   }
   
   .navColor{
-    background-color: #3e4a92;
-    padding-right: 20px;
+    background-color: #ffffff;
+    color: #091e79;
+    height: 100px;
   }
   
   .navColor a, span, button{
-    color: white;
+    color: rgb(2, 34, 124);
   }
 
     .navColor a:hover{
-        color: #81df9d;
+      background-color: #122991;
+        color: #ffffff;
     }
 
     .example-icon{
@@ -24,6 +26,15 @@
         margin: 0 1.0em;
     }
 
+    .example-icon:hover{
+        color: #1b3fdf;
+    }
+
+    a img{
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+    }
 
     
 

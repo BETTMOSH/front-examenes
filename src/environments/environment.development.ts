@@ -1,3 +1,4 @@
 export const environment = {
-    production: false,
+    API_URL: 'http://spring_app:8080',
+    production: true,
 };

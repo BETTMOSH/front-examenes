@@ -2,3 +2,12 @@
   background-image: url('/assets/exam.png');
   background-size: cover; /*cover se usa para que la imagen se ajuste al tamaño del contenedor*/
 }
+
+img {
+  border-radius: 10px;
+}
+
+h1{
+  color: #004d6f;
+}
+

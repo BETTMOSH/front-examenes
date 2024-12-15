@@ -1,6 +1,6 @@
 <mat-toolbar class="navColor">
   <a [routerLink]="'/'" mat-icon-button class="example-icon" arial-label="Example icon-button with menu icon">
-    <mat-icon>menu_books</mat-icon>
+    <img src="../../../assets/iconoActive.png" alt="logo">
   </a>
   <span>Active-Language</span>
   <span class="example-spacer"></span>
@@ -8,25 +8,28 @@
   <!-- Implementación del Datepicker -->
 
   <!-- Si no está logueado -->
-  <a *ngIf="!isLoggedIn" [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon"
-    aria-label="Example icon-button with heart icon">
+  <a *ngIf="!isLoggedIn" [routerLink]="'/login'" mat-button class="example-icon mr20 ml70"
+    aria-label="Example icon-button">
     Iniciar sesión
   </a>
 
-  <a *ngIf="!isLoggedIn" [routerLink]="'/signup'" mat-icon-button class="example-icon favorite-icon mr20 ml70"
+  <a *ngIf="!isLoggedIn" [routerLink]="'/signup'" mat-button class="example-icon mr20 ml70"
     aria-label="Example icon-button with heart icon">
     Registrar
   </a>
 
-  <a *ngIf="isLoggedIn" (click)="logout()" style="margin-right: 40px" mat-icon-button class="example-icon favorite-icon"
-    aria-label="Example icon-button with heart icon">
+  <a *ngIf="isLoggedIn" (click)="logout()" mat-button class="example-icon"
+    aria-label="Example icon-button ">
     Cerrar sesión
   </a>
 
   <!-- Si está logueado -->
-  <button *ngIf="isLoggedIn && user" [routerLink]="['/admin']" mat-button style="color: white;" class="example-icon favorite-icon"
-    aria-label="Example icon-button with heart icon"> {{ user.username }}
+  <button *ngIf="isLoggedIn && user" [routerLink]="user === 'ADMIN' ? '/admin/profile' : '/user-dashboard/profile'" 
+          mat-button style="color: #091e79;" class="example-icon mr20 ml70"
+          aria-label="Example icon-button"> {{ user.username }}
   </button>
-
+  <mat-slide-toggle [formControl]="switchTheme" class="example-icon" aria-label="Example icon-button">
+    Modo oscuro
+  </mat-slide-toggle>
 
 </mat-toolbar>

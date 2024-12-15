@@ -3,6 +3,7 @@ import Swal from 'sweetalert2';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoriaService } from './../../../services/categoriaservice/categoria.service';
 import { Component, OnInit } from '@angular/core';
+import { Categoria } from 'src/app/interfaces/categoria';
 
 @Component({
   selector: 'app-add-categoria',
@@ -11,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCategoriaComponent implements OnInit {
 
-  categoria = {
+  categoria: Categoria = {
     titulo : '',
     descripcion : ''
   }
@@ -29,9 +30,8 @@ export class AddCategoriaComponent implements OnInit {
       return ;
     }
 
-    /* if(this.categoria.categoria){  */
     this.categoriaService.agregarCategoria(this.categoria).subscribe({
-      next:(data:any) => {
+      next:(data) => {
         this.categoria.titulo = '';
         this.categoria.descripcion = '';
         Swal.fire('Categoría agregada','La categoría ha sido agregada con éxito','success');

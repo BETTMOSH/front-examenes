@@ -6,6 +6,10 @@
 </ngx-ui-loader>
 
 <div ngxUiLoaderBlurred (blur) = "10">
-  <app-navbar/>
-<router-outlet/>
+  <div class="app-wrapper">
+    <app-navbar></app-navbar>
+    <div class="content">
+      <router-outlet></router-outlet>
 </div>
+<app-footer/>
+ 

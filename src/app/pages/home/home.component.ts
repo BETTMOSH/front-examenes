@@ -7,10 +7,8 @@ import { LoginService } from 'src/app/services/loginservice/login.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  visitas: any;
   
-  constructor(public loginService: LoginService) { }
+  constructor() { }
   
   ngOnInit(): void {
     

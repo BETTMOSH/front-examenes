@@ -1,6 +1,7 @@
 import  Swal  from 'sweetalert2';
 import { ExamenService } from '../../../services/examenservice/examen.service';
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-view-examenes',

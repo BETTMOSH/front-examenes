@@ -10,7 +10,7 @@
 }
 
 .table{
-  background-color: #e9f2f5;
+  background-color: #ffffff;
   width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 
@@ -24,7 +24,7 @@
 }
 
 .table tr td:first-child{
-  font-weight: bold;
+  font-weight:500;
   width: 49.5%;
 }
 
@@ -33,6 +33,7 @@
   justify-content: center;
   text-align: center;
   padding: auto;
+  color:#091e79;
 }
 
 /* Ocultar elementos que no queremos imprimir */
@@ -49,4 +50,15 @@
 
 button{
   margin: 10px;
+}
+
+.titulo{
+  margin: 10px;
+  font-size: 1.5rem;
+  padding: 10px;
+  color: #091e79;
+}
+
+.profile-page{
+  background-color: #f7f7f7;
 }

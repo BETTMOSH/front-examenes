@@ -1,7 +1,7 @@
 import { LoginService } from '../../services/loginservice/login.service';
-import { inject, Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree , Router, CanActivateFn } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,16 +21,3 @@ export class NormalGuard {
     return false;
   }
 }
-
-    /* canActivate: CanActivateFn = (route, state) => {
-    const loginService = inject(LoginService);
-    const router = inject(Router);
-  
-    if (loginService.isLoggedIn() && loginService.getUserRole() === 'NORMAL') {
-      return true;
-    }
-  
-    router.navigate(['login']);
-    return false;
-  }; 
-}*/

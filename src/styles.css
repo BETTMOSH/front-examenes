@@ -1,18 +1,18 @@
 
+html, body { 
+  height: 100%;
+  margin: 0;
+  padding: 0;
+ }
 
-html, body { height: 100%; }
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;   
-  background: #f5f5f5;
+  background: #ffffff;
 }
 
 .text-center{
   text-align: center;
-}
-
-.full-width{
-  width: 100%;
 }
 
 .ml20{
@@ -48,5 +48,15 @@ body {
 }
 
 .ml70{
-  margin-left: 70px !important;
+  margin-left: 20px !important;
 }
+
+
+
+input, label {
+  color: initial;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+

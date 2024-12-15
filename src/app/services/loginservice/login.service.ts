@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import baserUrl from '../helperUrl';
+import { Usuario } from 'src/app/interfaces/usuario';
+import { Login } from 'src/app/interfaces/login';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +16,12 @@ export class LoginService {
   constructor(private http:HttpClient) { }
 
   //generamos el token mediante el endpoint del backend
-  public generateToken(loginData:any){
+  public generateToken(loginData:Login){
     return this.http.post(`${baserUrl}/api/auth/generate-token`,loginData);
     
   }
   //iniciamos sesión y establecemos el token en el localStorage
-  public loginUser(token:any){
+  public loginUser(token:string){
     localStorage.setItem('token',token);
     return true;
   }
@@ -54,7 +56,7 @@ export class LoginService {
   
 
   //establecemos el usuario en el localStorage
-  public setUser(user:any){
+  public setUser(user:string){
     localStorage.setItem('user', JSON.stringify(user));
   }
 
