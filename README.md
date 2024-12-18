@@ -24,6 +24,6 @@ Ejecuta `ng generate component nombre-del-componente` para generar un nuevo comp
 
 ## Construcción
 
-Ejecuta `ng build` para construir el proyecto. Los archivos de construcción se almacenarán en el directorio `dist/`.
+Ejecuta `npm run ` para construir el proyecto. Los archivos de construcción se almacenarán en el directorio `dist/`.
 
 

@@ -16,7 +16,7 @@ export class ViewExamenesComponent implements OnInit {
 
   // Se obtienen los exámenes de la base de datos y se almacenan en la variable examenes
   ngOnInit(): void {
-    this.examenService.listarCuestionarios().subscribe({
+    this.examenService.listarExamenes().subscribe({
       next:(dato:any) => {
         this.examenes = dato;
         console.log(this.examenes);

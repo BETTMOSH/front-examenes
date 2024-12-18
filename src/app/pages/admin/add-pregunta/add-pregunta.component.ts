@@ -10,9 +10,9 @@ import Swal from 'sweetalert2';
 })
 export class AddPreguntaComponent implements OnInit {
 
-  examenId:any;
-  titulo:any;
-  pregunta:any = {
+  examenId:number = 0;
+  titulo:string = '';
+  pregunta: any = {
     examen : {},
     contenido : '',
     opcion1 : '',
@@ -37,19 +37,19 @@ export class AddPreguntaComponent implements OnInit {
       return;
     }
     if(this.pregunta.opcion1.trim() == '' || this.pregunta.opcion1 == null){
-      return;
+      Swal.fire('Error','La opción 1 no puede estar vacía','error');
     }
     if(this.pregunta.opcion2.trim() == '' || this.pregunta.opcion2 == null){
-      return;
+      Swal.fire('Error','La opción 2 no puede estar vacía','error');
     }
     if(this.pregunta.opcion3.trim() == '' || this.pregunta.opcion3 == null){
-      return;
+      Swal.fire('Error','La opción 3 no puede estar vacía','error');
     }
     if(this.pregunta.opcion4.trim() == '' || this.pregunta.opcion4 == null){
-      return;
+      Swal.fire('Error','La opción 4 no puede estar vacía','error');
     }
     if(this.pregunta.respuesta.trim() == '' || this.pregunta.respuesta == null){
-      return;
+    return;
     }
 
     this.preguntaService.guardarPregunta(this.pregunta).subscribe({

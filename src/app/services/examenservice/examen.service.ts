@@ -11,7 +11,7 @@ export class ExamenService {
 
   constructor(private http:HttpClient) { }
 
-  public listarCuestionarios(){
+  public listarExamenes(){
     return this.http.get(`${baserUrl}/examen/`);
   }
 

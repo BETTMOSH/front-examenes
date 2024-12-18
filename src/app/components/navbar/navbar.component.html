@@ -28,7 +28,7 @@
           mat-button style="color: #091e79;" class="example-icon mr20 ml70"
           aria-label="Example icon-button"> {{ user.username }}
   </button>
-  <mat-slide-toggle [formControl]="switchTheme" class="example-icon" aria-label="Example icon-button">
+  <mat-slide-toggle [checked]="isDarkTheme" (change)="toggleDarkMode()" aria-label="Example icon-button">
     Modo oscuro
   </mat-slide-toggle>
 
